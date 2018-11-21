@@ -24,5 +24,9 @@ navbar:
       href: https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow
     - icon: fab fa-github
       href: https://github.com/dyadxmachina
+    - icon: fab fa-tumblr
+      href: https://haohanwang.tumblr.com/
+    - icon: fab fa-tumblr
+      href: https://anthrochristianramsey.tumblr.com      
 
 output: radix::radix_article
