@@ -25,5 +25,7 @@ bibliography: ../maths-of-deep-learning-ai/book.bib
 citation_url: https://m4dl.com
 ---
 
+![](https://m4dl.com/artwork/maths%20of%20deep%20learning.png)
+
 ```{r child = '../maths-of-deep-learning-ai/01-introduction.Rmd'}
 ```

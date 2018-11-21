@@ -6,7 +6,7 @@ output_dir: "docs"
 base_url: https://dyadxmachina.github.io/hub/
 google_analytics: "UA-128379860-5"
 repository_url: https://github.com/dyadxmachina/hub
-favicon: img/smalldx.png
+favicon: img/dp_favicon.png
 navbar:
   right:
     - text: "Home"
@@ -17,7 +17,7 @@ navbar:
       href: deepedu.html
     - text: Mathematics for Deep Learning
       href: https://m4dl.com
-    - text: Applied Deep Learning with TensorFlow
+    - text: Deep Learning with TensorFlow
       href: https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow
 
 output: radix::radix_article

@@ -16,13 +16,24 @@ Deep Learning Researchers using machine learning in the fields of mental health,
 
 ## 2018 Work (Finished and In Progress)
 
+### [Mathematics for Deep Learning and AI (m4dl.com)](https://m4dl.com)
+
+![img/](img/bookimage.png)
+
+#### The mathematics needed for deep learning and ai. On it's way.
+
+<hr />
+
 ### [Applied Deep Learning with TensorFlow (Packt Publishing) course](https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow)
 #### 6+ hour course on deep learning using TensorFlow and Google Cloud Machine Learning Engine.
+
+![Applied Deep Learning with TensorFlow](img/adl_cover.png)
 
 <hr />
 
 ### [Deep Learning & Artificial Intelligence -
 A human centered perspective](https://dyadxmachina.github.io/hub/intro_ai.html)
+
 
 #### Yet another intro to deep learning and artificial intelligence
 
@@ -30,21 +41,29 @@ A human centered perspective](https://dyadxmachina.github.io/hub/intro_ai.html)
 
 ### [Emotion and AI on TensorFlow Meets @ Google #1](https://www.youtube.com/watch?v=9pr7j27G_TM)
 
+
+![](img/haohantensorflow.jpg)
+
 ### [Emotion and AI on TensorFlow Meets @ Google #2](https://www.youtube.com/watch?v=zqWrHaY6U9g)
+
+![](img/fanlitensorflow.jpg)
 
 #### Both of us on set with Laurence Moroney chatting about neuroscience, deep learning, and our latest course and research.
 
 <hr />
 ### [DeepEdu (Deep learning and education paper)](https://dyadxmachina.github.io/hub/deepedu.html)
+
+
+![Deep Edu - for the modern learner](img/deepedu_cover.png)
+
 #### How might we better represent and test a learner's formal knowledge?
 
 <hr />
-### [Mathematics for Deep Learning and AI (m4dl.com)](https://m4dl.com)
-#### The mathematics needed for deep learning and ai. On it's way.
 
-<hr />
 ### [huīsè de system](http://huisede.com)
 #### a practical system for living in the age of entropy 
+
+![huīsè de - a practical system for living in the age of entropy](img/huisede_cover.png)
 
 <hr />
 ### [dyad language learning](https://github.com/dyadxmachina/dyad-language-learning)
