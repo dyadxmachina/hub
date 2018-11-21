@@ -18,7 +18,7 @@ Deep Learning Researchers using machine learning in the fields of mental health,
 
 ### [Mathematics for Deep Learning and AI (m4dl.com)](https://m4dl.com)
 
-![img/](img/bookimage.png)
+![New book - Matematics for Deep Learning and AI](img/m4d_cover.png)
 
 #### The mathematics needed for deep learning and ai. On it's way.
 

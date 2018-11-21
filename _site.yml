@@ -22,5 +22,7 @@ navbar:
       href: https://m4dl.com
     - text: Deep Learning with TensorFlow
       href: https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow
+    - icon: fab fa-github
+      href: https://github.com/dyadxmachina
 
 output: radix::radix_article
