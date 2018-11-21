@@ -20,6 +20,14 @@ Deep Learning Researchers using machine learning in the fields of mental health,
 #### 6+ hour course on deep learning using TensorFlow and Google Cloud Machine Learning Engine.
 
 <hr />
+
+### [Deep Learning & Artificial Intelligence -
+A human centered perspective](https://dyadxmachina.github.io/hub/intro_ai.html)
+
+#### Yet another intro to deep learning and artificial intelligence
+
+<hr />
+
 ### [Emotion and AI on TensorFlow Meets @ Google #1](https://www.youtube.com/watch?v=9pr7j27G_TM)
 
 ### [Emotion and AI on TensorFlow Meets @ Google #2](https://www.youtube.com/watch?v=zqWrHaY6U9g)
