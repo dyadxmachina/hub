@@ -1,18 +1,49 @@
 ---
-title: "dyadxmachina"
+title: "dyad x machina projects"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  [two](http://dyadxmachina.com) [deep learning researchers](https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow) focused on [mental](https://www.youtube.com/watch?v=9pr7j27G_TM) [health](https://www.youtube.com/watch?v=zqWrHaY6U9g) and [education](https://dyadxmachina.github.io/hub/deepedu.html).
 site: radix::radix_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
 
-# Learn more about creating websites with Radix at:
-# https://rstudio.github.io/radix/website.html
+## [Fanli Zheng (Christian)](https://anthrochristianramsey.tumblr.com) & [Haohan Wang](https://www.tumblr.com/blog/haohanwang)
 
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/radix/publish_website.html#github-pages
+Deep Learning Researchers using machine learning in the fields of mental health, education, and design. 
 
-```
+[NLP, Physiology, Vision]
 
+> I don't know why we are here, but I'm pretty sure that it is not in order to enjoy ourselves. - Wittgenstein
+
+## 2018 Work (Finished and In Progress)
+
+### [Applied Deep Learning with TensorFlow (Packt Publishing) course](https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow)
+#### 6+ hour course on deep learning using TensorFlow and Google Cloud Machine Learning Engine.
+
+<hr />
+### [Emotion and AI on TensorFlow Meets @ Google #1](https://www.youtube.com/watch?v=9pr7j27G_TM)
+
+### [Emotion and AI on TensorFlow Meets @ Google #2](https://www.youtube.com/watch?v=zqWrHaY6U9g)
+
+#### Both of us on set with Laurence Moroney chatting about neuroscience, deep learning, and our latest course and research.
+
+<hr />
+### [DeepEdu (Deep learning and education paper)](https://dyadxmachina.github.io/hub/deepedu.html)
+#### How might we better represent and test a learner's formal knowledge?
+
+<hr />
+### [Mathematics for Deep Learning and AI (m4dl.com)](https://m4dl.com)
+#### The mathematics needed for deep learning and ai. On it's way.
+
+<hr />
+### [huīsè de system](http://huisede.com)
+#### a practical system for living in the age of entropy 
+
+<hr />
+### [dyad language learning](https://github.com/dyadxmachina/dyad-language-learning)
+#### How might one take best advantage of learning a language with a fluent speaker who is also your partner?
+<hr />
+
+![Fanli & Haohan](https://avatars0.githubusercontent.com/u/38859755?s=400&u=b7629dbcf3c84c0899f1e727c6e03af22d8b49b3&v=4)
+
+
+Email us at two@dyadxmachina.com or add us on LinkedIn [here](https://linkedin.com/in/christianramsey/) and [here](linkedin.com/in/haohanw/).
