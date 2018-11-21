@@ -1,0 +1,39 @@
+---
+title: DeepEdu - Learning and Representation
+description: | 
+  using deep learning to rethink knowledge acquisition and representation
+date: Nov 24, 2018
+author:
+  - name: Fanli (Christian) Zheng
+    url: https://www.linkedin.com/in/christianramsey/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com    
+    email: thechristianramsey@gmail.com
+  - name: Haohan Wang
+    url: https://www.linkedin.com/in/haohanw/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com
+    email: haohan723@gmail.com    
+    preview: img/knowledgeEcosystem.png
+
+abstract: | 
+output: 
+  radix::radix_article:
+    toc: true
+    toc_depth: 2
+bibliography: ../../can-machines-teach/book.bib
+citation_url: https://dyadxmachina.github.io/can-machines-teach
+---
+
+![ Knowledge Ecosystem ](img/knowledgeEcosystem.png) 
+
+```{r child = '../../can-machines-teach/01-intro.Rmd'}
+```
+
+```{r child = '../../can-machines-teach/02-survey.Rmd'}
+```
+
+```{r child = '../../can-machines-teach/03-conclusion.Rmd'}
+```
+
+
