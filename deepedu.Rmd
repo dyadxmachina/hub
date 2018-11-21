@@ -1,7 +1,7 @@
 ---
 title: DeepEdu - Learning and Representation
 description: | 
-  using deep learning to rethink knowledge acquisition and representation
+  using deep learning to rethink knowledge acquisition and representation for modern learners
 date: Nov 24, 2018
 author:
   - name: Fanli (Christian) Zheng
@@ -20,7 +20,7 @@ abstract: |
 output: 
   radix::radix_article:
     toc: true
-    toc_depth: 2
+    toc_depth: 1
 bibliography: ../../can-machines-teach/book.bib
 citation_url: https://dyadxmachina.github.io/can-machines-teach
 ---
