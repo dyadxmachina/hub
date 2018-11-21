@@ -1,5 +1,5 @@
 name: "centre"
-title: "dyadxmachina"
+title: "dyadxmachina projects"
 description: |
   dyadxmachina
 output_dir: "docs"
@@ -9,12 +9,10 @@ repository_url: https://github.com/dyadxmachina/hub
 favicon: img/smalldx.png
 navbar:
   right:
-    - text: "Blog Home"
-      href: index.html
     - text: "Home"
-      href: https://dyadxmachina.com      
-    - text: "About"
-      href: about.html
+      href: https://dyadxmachina.com  
+    - text: Intro to AI
+      href: intro_ai.html      
     - text: DeepEdu
       href: deepedu.html
     - text: Mathematics for Deep Learning

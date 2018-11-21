@@ -1,0 +1,29 @@
+---
+title: Deep Learning & Artificial Intelligence
+description: | 
+  A human centered perspective
+date: Nov 24, 2018
+author:
+  - name: Fanli (Christian) Zheng
+    url: https://www.linkedin.com/in/christianramsey/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com    
+    email: thechristianramsey@gmail.com
+  - name: Haohan Wang
+    url: https://www.linkedin.com/in/haohanw/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com
+    email: haohan723@gmail.com    
+    preview: img/knowledgeEcosystem.png
+
+abstract: | 
+output: 
+  radix::radix_article:
+    toc: true
+    toc_depth: 2
+bibliography: ../maths-of-deep-learning-ai/book.bib
+citation_url: https://m4dl.com
+---
+
+```{r child = '../maths-of-deep-learning-ai/01-introduction.Rmd'}
+```
