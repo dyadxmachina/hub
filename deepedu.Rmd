@@ -21,19 +21,19 @@ output:
   radix::radix_article:
     toc: true
     toc_depth: 1
-bibliography: ../../can-machines-teach/book.bib
+bibliography: ../can-machines-teach/book.bib
 citation_url: https://dyadxmachina.github.io/can-machines-teach
 ---
 
 ![ Knowledge Ecosystem ](img/knowledgeEcosystem.png) 
 
-```{r child = '../../can-machines-teach/01-intro.Rmd'}
+```{r child = '../can-machines-teach/01-intro.Rmd'}
 ```
 
-```{r child = '../../can-machines-teach/02-survey.Rmd'}
+```{r child = '../can-machines-teach/02-survey.Rmd'}
 ```
 
-```{r child = '../../can-machines-teach/03-conclusion.Rmd'}
+```{r child = '../can-machines-teach/03-conclusion.Rmd'}
 ```
 
 
