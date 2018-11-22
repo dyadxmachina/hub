@@ -5,7 +5,6 @@ description: |
 site: radix::radix_website
 ---
 
-
 ## [Fanli Zheng (Christian)](https://anthrochristianramsey.tumblr.com) & [Haohan Wang](https://www.tumblr.com/blog/haohanwang)
 
 Deep Learning Researchers using machine learning in the fields of mental health, education, and design. 
