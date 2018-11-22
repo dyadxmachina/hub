@@ -20,7 +20,7 @@ abstract: |
 output: 
   radix::radix_article:
     toc: true
-    toc_depth: 2
+    toc_depth: 3
 bibliography: ../maths-of-deep-learning-ai/book.bib
 citation_url: https://m4dl.com
 ---
