@@ -12,15 +12,16 @@
       <link>https://dyadxmachina.github.io/hub/</link>
     </image>
     <generator>Radix</generator>
-    <lastBuildDate>Sat, 24 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Deep Learning &amp; Artificial Intelligence</title>
+      <title>DeepEdu - Learning and Representation</title>
       <dc:creator>Fanli (Christian) Zheng</dc:creator>
       <dc:creator>Haohan Wang</dc:creator>
       <link>https://dyadxmachina.github.io/hub/posts</link>
-      <description>A human centered perspective</description>
+      <description>using deep learning to rethink knowledge acquisition and representation for modern learners</description>
       <guid>https://dyadxmachina.github.io/hub/posts</guid>
-      <pubDate>Sat, 24 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://dyadxmachina.github.io/hub/posts/radix-preview.png" medium="image" type="image/png" width="1248" height="576"/>
     </item>
   </channel>
 </rss>
