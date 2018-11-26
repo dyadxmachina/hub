@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="radix" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>dyadxmachina projects: DeepEdu - Learning and Representation</title>
+  
+  <meta property="description" itemprop="description" content="using deep learning to rethink knowledge acquisition and representation for modern learners"/>
+  
+  <link rel="icon" type="image/png" href="img/dp_favicon.png"/>
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2018-11-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2018-11-24"/>
+  <meta name="article:author" content="Fanli (Christian) Zheng"/>
+  <meta name="article:author" content="Haohan Wang"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="dyadxmachina projects: DeepEdu - Learning and Representation"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="using deep learning to rethink knowledge acquisition and representation for modern learners"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="dyadxmachina projects"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="dyadxmachina projects: DeepEdu - Learning and Representation"/>
+  <meta property="twitter:description" content="using deep learning to rethink knowledge acquisition and representation for modern learners"/>
+  
+  <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+  <meta name="citation_title" content="dyadxmachina projects: DeepEdu - Learning and Representation"/>
+  <meta name="citation_fulltext_html_url" content="https://dyadxmachina.github.io/can-machines-teach"/>
+  <meta name="citation_online_date" content="2018/11/24"/>
+  <meta name="citation_publication_date" content="2018/11/24"/>
+  <meta name="citation_author" content="Fanli (Christian) Zheng"/>
+  <meta name="citation_author_institution" content="dyad x machina"/>
+  <meta name="citation_author" content="Haohan Wang"/>
+  <meta name="citation_author_institution" content="dyad x machina"/>
+  <!--/radix_placeholder_meta_tags-->
+  
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","author","abstract","output","bibliography","citation_url"]}},"value":[{"type":"character","attributes":{},"value":["DeepEdu - Learning and Representation"]},{"type":"character","attributes":{},"value":["using deep learning to rethink knowledge acquisition and representation for modern learners\n"]},{"type":"character","attributes":{},"value":["Nov 24, 2018"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url","email"]}},"value":[{"type":"character","attributes":{},"value":["Fanli (Christian) Zheng"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/christianramsey/"]},{"type":"character","attributes":{},"value":["dyad x machina"]},{"type":"character","attributes":{},"value":["https://dyadxmachina.com"]},{"type":"character","attributes":{},"value":["thechristianramsey@gmail.com"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url","email","preview"]}},"value":[{"type":"character","attributes":{},"value":["Haohan Wang"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/haohanw/"]},{"type":"character","attributes":{},"value":["dyad x machina"]},{"type":"character","attributes":{},"value":["https://dyadxmachina.com"]},{"type":"character","attributes":{},"value":["haohan723@gmail.com"]},{"type":"character","attributes":{},"value":["img/knowledgeEcosystem.png"]}]}]},{"type":"NULL"},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[1]}]}]},{"type":"character","attributes":{},"value":["../can-machines-teach/book.bib"]},{"type":"character","attributes":{},"value":["https://dyadxmachina.github.io/can-machines-teach"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  
+  <script type="application/javascript">
+  
+    window.headroom_prevent_pin = false;
+  
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+  
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+  
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+  
+      // responsive menu
+      $('.radix-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+  
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+  
+  <style type="text/css">
+  
+  /* Theme (user-documented overrideables for nav appearance) */
+  
+  .radix-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #455a64;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .radix-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .radix-site-nav a:hover {
+    color: white;
+  }
+  
+  @media print {
+    .radix-site-nav {
+      display: none;
+    }
+  }
+  
+  .radix-site-header {
+  
+  }
+  
+  .radix-site-footer {
+  
+  }
+  
+  
+  /* Site Header */
+  
+  .radix-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+  
+  .radix-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+  
+  
+  .radix-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+  
+  .radix-site-header a,
+  .radix-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+  
+  .radix-site-header .title {
+    font-size: 18px;
+  }
+  
+  .radix-site-header .logo {
+    padding: 0;
+  }
+  
+  .radix-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+  
+  .radix-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+  
+  
+  
+  @media screen and (min-width: 1000px) {
+    .radix-site-header .logo img {
+      display: inline-block;
+    }
+    .radix-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .radix-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .radix-site-header .title {
+      padding-left: 12px;
+    }
+  }
+  
+  
+  .radix-site-header .nav-toggle {
+    display: none;
+  }
+  
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+  
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-dropdown-active {
+    display: block;
+  }
+  
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+  
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
+    .radix-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .radix-site-header .title {
+      margin-left: 0;
+    }
+    .radix-site-header .nav-right {
+      margin-right: 0;
+    }
+    .radix-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header.responsive {position: relative;}
+    .radix-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .radix-site-header.responsive a,
+    .radix-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .radix-site-header.responsive .nav-left,
+    .radix-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .radix-site-header.responsive .nav-dropdown {float: none;}
+    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
+    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  /* Site Footer */
+  
+  .radix-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Headroom */
+  
+  d-title {
+    padding-top: 6rem;
+  }
+  
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+  
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+  
+  .headroom--unpinned {
+    top: -100px;
+  }
+  
+  .headroom--pinned {
+    top: 0;
+  }
+  
+  </style>
+  
+  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
+  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.radix-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128379860-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-128379860-5');
+  </script>
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"DeepEdu - Learning and Representation","description":"using deep learning to rethink knowledge acquisition and representation for modern learners","authors":[{"author":"Fanli (Christian) Zheng","authorURL":"https://www.linkedin.com/in/christianramsey/","affiliation":"dyad x machina","affiliationURL":"https://dyadxmachina.com"},{"author":"Haohan Wang","authorURL":"https://www.linkedin.com/in/haohanw/","affiliation":"dyad x machina","affiliationURL":"https://dyadxmachina.com"}],"publishedDate":"2018-11-24T00:00:00.000-08:00","citationText":"Zheng & Wang, 2018"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="radix-site-nav radix-site-header">
+<div class="nav-left">
+<a class="logo">
+<img src="img/dp_logo.png"/>
+</a>
+<a href="index.html" class="title">dyadxmachina projects</a>
+</div>
+<div class="nav-right">
+<a href="https://dyadxmachina.com">Home</a>
+<a href="blog.html">ML Blog</a>
+<a href="intro_ai.html">Intro to AI</a>
+<a href="deepedu.html">DeepEdu</a>
+<a href="https://m4dl.com">Mathematics for Deep Learning</a>
+<a href="https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow">Deep Learning with TensorFlow</a>
+<a href="https://github.com/dyadxmachina">
+<i class="fab fa-github"></i>
+</a>
+<a href="https://haohanwang.tumblr.com/">
+<i class="fab fa-tumblr"></i>
+</a>
+<a href="https://anthrochristianramsey.tumblr.com">
+<i class="fab fa-tumblr"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>DeepEdu - Learning and Representation</h1>
+<p>using deep learning to rethink knowledge acquisition and representation for modern learners</p>
+</div>
+
+<div class="d-byline">
+  Fanli (Christian) Zheng <a href="https://www.linkedin.com/in/christianramsey/" class="uri">https://www.linkedin.com/in/christianramsey/</a> (dyad x machina)<a href="https://dyadxmachina.com" class="uri">https://dyadxmachina.com</a>
+  
+,   Haohan Wang <a href="https://www.linkedin.com/in/haohanw/" class="uri">https://www.linkedin.com/in/haohanw/</a> (dyad x machina)<a href="https://dyadxmachina.com" class="uri">https://dyadxmachina.com</a>
+  
+<br/>Nov 24, 2018
+</div>
+
+<div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#primary-concerns">Primary Concerns</a></li>
+<li><a href="#concepts">Concepts</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+<li><a href="#about-the-authors">About the Authors</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<figure>
+<img src="img/knowledgeEcosystem.png" alt="Knowledge Ecosystem" /><figcaption>Knowledge Ecosystem</figcaption>
+</figure>
+<h1 id="introduction">Introduction</h1>
+<figure>
+<img src="img/deepedu.png" alt="DeepEdu Network" /><figcaption>DeepEdu Network</figcaption>
+</figure>
+<h2 id="a-future">A Future</h2>
+<p>Let’s start with a future view of an individual’s education. Many of us have used the internet to educate ourselves with the many media from high-quality videos, papers, articles, podcasts to how-tos being uploaded from numerous individuals, groups, and institutions like never before (60 hours of video are uploaded to youtube.com every minute).</p>
+<p>Let us imagine that all of what you have learned online, throughout the entirety of your life, from the hundreds of Youtube videos, Wikipedia articles, Nature papers, and podcasts you’ve read, watched, or listened to, were all added structurally to your <strong>knowledge journey</strong>, and what if that journey could be consolidated into what we might call a <strong>knowledge footprint</strong> that could be shared with others? Could this replace static degrees? Or augment them to be more inclusive of a learner’s true knowledge? How might we test such knowledge? Could we even predict and provide the guidance on what an individual should be learning next to best support their knowledge acquisition?</p>
+<h2 id="a-comparison">A Comparison</h2>
+<p>Now, let’s go back to our current approach to education. Many of us treat knowledge acquisition like a chapter in the individual’s life that is limited to one or more formal places i.e. universities. This is misleading since we accrue knowledge from everywhere and most recently the internet has become a primary source of knowledge acquisition but has gone mostly unaccounted for in terms of recognition (i.e. watching a whole series of Youtube lectures on the Information Theory or Discrete Mathematics goes mostly unnoticed when someone views one’s resume or by simply looking at his or her degree). The current approach makes it much harder for people to switch to working and exploring the domains or professional fields outside of their degree area. Knowing rigorous mathematics and not having a degree in it, is said to be surprising, therefore the current “thumbnail view” of an individual’s knowledge is necessarily inadequate to the new mediums of knowledge acquisition.</p>
+<p><img src="img/aminer.png" alt="Example at aminer.com" /> The ideas behind this <em>knowledge ecosystem</em>, presents only one of many possible solutions to bringing our education system into modernity. The goal of it would be to promote the long-held idea of the <strong>life-long learner</strong>. Moving away from the “education chapter”&quot; of an individual’s life to the individual as an evolving learner; learning the necessary skills for what life presents them with today or might tomorrow. It would (combined with traditional education) show us a more accurate depiction of a learner’s knowledge and therefore that of a society’s collective knowledge.</p>
+<p>Visualised over time, we could begin to capture a learner’s so-called <strong>knowledge journey</strong>. Composed of every piece of content they’ve gained knowledge from mapped to the <em>human knowledge graph</em>. Showing how an individual has traversed through the world of human knowledge.</p>
+<p>This would also serve as a way for others, who may be on a similar <strong>knowledge journey</strong> to connect with “their” cohort which may not need to be bound by geography or demography. This could be the start of meetups, study groups, flexible class models and so on.</p>
+<p>For those who are looking for a change, they may find different journeys that help them decide what step to take next. You would also be able to connect someone’s occupation to their <strong>knowledge journey</strong>.</p>
+<p>On aggregate, we could begin to cluster similar <strong>knowledge journeys</strong> through unsupervised learning, which might lead to completely new journeys that others may be inspired to follow.</p>
+<h2 id="knowledge-ecosystem">Knowledge Ecosystem</h2>
+<p>In this essay, we will propose a <strong>knowledge ecosystem</strong>, a new way of approaching education that attempts to build a more accurate depiction of a learner’s true knowledge. It will require significant effort to bring to life but we believe the benefits will outweigh the costs. We will talk about how we can use machine learning, deep learning, in particular, to help create and support a <strong>knowledge ecosystem</strong> which is made up of the learner’s <strong>knowledge footprint</strong>, <strong>knowledge journeys</strong>, and a <strong>collective human knowledge graph</strong>. We will walk you through some most recent research findings that would enable us to take the space of unstructured educational content on the web and do the following:</p>
+<ul>
+<li><p>classify content to higher level subjects</p></li>
+<li><p>map content unto the human knowledge graph</p></li>
+<li><p>test a learner's knowledge of recently viewed educational content through questions and answers, no what matter the subject.</p></li>
+</ul>
+<p>We will also argue that this imagined future is not only <strong>desirable</strong> for society but something similar is required to ensure individual’s knowledge to be well represented in a time where the pace of change is rapidly speeding up.</p>
+<p>Let us not forget, that even software engineering is currently being recreated with machine learning as a key pillar which wasn’t much of a thought 5-10 years ago.</p>
+<p>It is going to be tantamount if we have an adaptive system that can represent our current knowledge and also make us predictable to others given the future pushes us to know more than ever and knowing whom to collaborate with to apply such knowledge.</p>
+<p>This hypothetical future isn’t just conceptual, most of what we will present to you today is currently feasible due to the most recent advances in machine learning, and in particular deep learning</p>
+<p>In the last section of this essay, I will review what has been proposed and also call other researchers, educators, and designers to collaborate on such an ecosystem, even if it is just in part.</p>
+<p><small>*Note: For the purpose of this essay we will talk mostly about digital knowledge acquisition and leave the reader to extend the basics to knowledge obtained elsewhere.</small></p>
+<h1 id="primary-concerns">Primary Concerns</h1>
+<p>There are 3 main concerns that we will attempt to address in this article about online knowledge acquisition that stands in the way of having an adaptive and reliable knowledge ecosystem. We will attempt to present a system that can sufficiently overcome each of the concerns here and in the implementation section.</p>
+<p>There are as follows:</p>
+<ul>
+<li><p><strong>Passive Consumption</strong> - most of the online content is viewed passively by the learner and the result of passive consumption is that a learner does not grasp the concepts being taught.</p></li>
+<li><p><strong>Untested Knowledge</strong> - even if the learner was engaged while viewing a piece of educational content their knowledge is untested and therefore it isn’t clear if they’ve mastered the content accurately and in some sense holistically.</p></li>
+<li><p><strong>Knowledge Representation</strong> - even if the learner was engaged (1) and their knowledge was tested (2), simply knowing the counts or types of video they watched doesn’t make their knowledge predictable and useful to others. In fact, even the learner may be unaware of all of what they’ve viewed.</p></li>
+</ul>
+<h2 id="passive-consumption-and-untested-knowledge">Passive Consumption and Untested Knowledge</h2>
+<blockquote>
+<p>How would such an ecosystem ensure us against passive consumption?</p>
+</blockquote>
+<p><strong>Scenario #1</strong> A learner goes online and begins watching a series on Machine Learning. How do we engage and test a user’s knowledge?</p>
+<p><em>Proposition:</em> Using advances in deep learning, we propose a dual question and answer generation framework given the educational content.</p>
+<p><em>Result:</em> A learner gets a set of questions and multiple choice answers throughout the video. Keeping the user engaged and sharp to ensure they can answer each of the questions.</p>
+<p>As you can see, we’ve bundled passive consumption and untested knowledge because our proposed ecosystem approaches both of these by always testing the knowledge.</p>
+<h2 id="knowledge-ecosystem-example">Knowledge Ecosystem Example</h2>
+<figure>
+<img src="img/knowledgeEcosystem.png" alt="Knowledge Ecosystem" /><figcaption>Knowledge Ecosystem</figcaption>
+</figure>
+<p>Given a piece of educational content, our knowledge system will generate a set of questions and answers that theoretically capture the major concepts and facts that the learner should know after viewing a part of the content in whole.</p>
+<p>You can imagine watching a Youtube video and after a learner views 15 minutes of an hour-long lecture on Computational Complexity a quiz is presented (i.e. conditioned on the past 15 minutes of video), and the score is recorded. In the future, we would also be able to use the knowledge graph to bring in learner’s existing knowledge in order to generate more complex questions and answers with these priors and the current educational content.</p>
+<p>As the first step, our knowledge system would only consider content that is currently in use for now.</p>
+<h2 id="the-problem-of-knowledge-representation">The Problem of Knowledge Representation</h2>
+<blockquote>
+<p>Given most learner’s online knowledge acquisition varies and has been invisible up to now, how we can best represent their knowledge?</p>
+</blockquote>
+<p><strong>Scenario #2</strong> A learner has a degree in Public Health, but since graduating, he has been studying machine learning for the last 3 years. The learner now wants to apply to a job that requires the skills in both Health and Machine Learning. How do we represent their traditional and updated knowledge?</p>
+<p>This is a tricky problem that goes beyond any given algorithm. The exact design of a <strong>knowledge footprint</strong> and a <strong>knowledge journey</strong> has been attempted and we will not cover that in depth here. The proposed system presupposes the design of the knowledge footprint.</p>
+<p>There is another problem:</p>
+<blockquote>
+<p>how do we reduce someone’s knowledge (in this case a set of educational content and their respective scores) into a symbol that is representative of his/her current knowledge and could be shared across?</p>
+</blockquote>
+<p><em>Proposition:</em> We introduce <strong>knowledge journeys</strong> and the <strong>knowledge graph</strong> as a way to make sense and structure a learner’s knowledge acquisition. The collective <strong>knowledge graph</strong> will tell us about the subject the learner is studying and we can use this to compare to others and create a relative comparison.</p>
+<p><em>Result:</em> Reducing a learner’s <strong>knowledge journey</strong> into a common set of dimensions that make up into their <strong>knowledge footprint</strong> which would look similar to those with similar journeys.</p>
+<p>As a result, the employer, now familiar with the footprints can check the overlap between the current employee’s and a prospective employee’s to support their decision making.</p>
+<h1 id="concepts">Concepts</h1>
+<p>As mentioned above, we will be introducing a few novel concepts that we believe are the key components of such an educational ecosystem.</p>
+<h2 id="knowledge-footprint">Knowledge Footprint</h2>
+<p>The concept of a knowledge footprint is one or more custom symbol(s) or badge(s) with a profile that represents one’s education relative to that of others. This concept is particularly designed for solving the second concern (knowledge representation) that we proposed earlier.</p>
+<p>In turn, this footprint should encapsulate the information of all of one’s education (currently focused on digital) while balancing distinction and commonality with others.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="deepedu_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<h2 id="knowledge-journeys">Knowledge Journeys</h2>
+<figure>
+<img src="img/tsne.png" alt="Image title" /><figcaption>Image title</figcaption>
+</figure>
+<p>Image src: <a href="https://www.researchgate.net/figure/t-SNE-projection-of-the-embedding-of-all-learners-in-the-dataset-Major-labels-are_fig1_323391033" class="uri">https://www.researchgate.net/figure/t-SNE-projection-of-the-embedding-of-all-learners-in-the-dataset-Major-labels-are_fig1_323391033</a></p>
+<p>A <strong>knowledge journey</strong> is a somewhat holistic view of all of the educational content a learner has acquired over time. The journey should be a temporal representation of all of the subjects that one has viewed and been tested on. Knowledge journey should be simple enough to comprehend and compare but complex enough that the individual can go back to any particular moment in time and review the educational content they’ve viewed before. Coupled with the knowledge graph, it can also shed light on the possible next education content that a learner should be or would be interested in learning.</p>
+<p>This concept also helps address the knowledge representation concern. This time instead of capturing a consolidated snapshot of one’s current knowledge profile, this concept takes a temporal route to capture one’s entire learning path.</p>
+<h2 id="collective-human-knowledge-graph">Collective Human Knowledge Graph</h2>
+<figure>
+<img src="img/knowledge_graphy.png" alt="Image title" /><figcaption>Image title</figcaption>
+</figure>
+<p>The collective human knowledge graph can be compared to <a href="@googlekg">Google’s Search Knowledge Graph</a> which points unstructured information towards the structure. The graph should have all existing subjects that we are currently aware of (i.e. Mathematics, Computer Science, Art, and Sociology). Since each piece of educational content will be classified into one more sub-subject(s), all subjects will coexist within the knowledge graph.</p>
+<p>On the other hand, we could also use these subjects that are associated with that piece of content to help create the knowledge footprint for the learner.</p>
+<h2 id="deepedu-network">DeepEdu Network</h2>
+<p>We showed our idea of this novel DeepEdu network earlier because currently, we would have to cobble together multiple networks to make this work. Instead, we can use one network framework, DeepEdu, to solve the problem of generating questions and answer pairs for any given educational content (text, video, image, pdf, etc).</p>
+<p>The possible implementation solutions are introduced in the implementation section.</p>
+<h2 id="knowledge-ecosystem-by-example">Knowledge Ecosystem by Example</h2>
+<figure>
+<img src="img/knowledgeEcosystem.png" alt="Knowledge Ecosystem" /><figcaption>Knowledge Ecosystem</figcaption>
+</figure>
+<p>Now that we are aware of each of the elements, let’s talk about how they work in practice.</p>
+<p>A learner watches a video titled ‘Depression’ by Robert Sapolsky.</p>
+<ul>
+<li><p>The video is classified by a neural network like the following subjects [Neuroscience, Mental Health, Psychology];</p></li>
+<li><p>The subjects and the content are then mapped to the <strong>collective knowledge graph</strong> to continuously update it as more information collected about each subject;</p></li>
+<li><p>Using <strong>DeepEdu</strong> or similar, a set of questions and answers are generated say every 15* minutes of the video;</p></li>
+<li><p>A learner is present with 5 questions to answer and scores 4/5 (80%).</p></li>
+<li><p>At the end of the video, the learner records a video summary and is evaluated with a score 7/10 (70%);</p></li>
+<li><p>The evaluation network looks at the <strong>semantic and conceptual mutual information</strong> shared between the original content and the learner’s video summary to generate a score;</p></li>
+<li><p>The system takes up all the scores and outputs a final weighted average score that mapped to the video and also counted at the subject level;</p></li>
+<li><p>Eventually, the system will add this content to the learner’s <strong>knowledge journey</strong> and update his/her <em>knowledge footprint</em> based on the scores;</p></li>
+<li><p>A learner now has acquired a new piece of content and updated his/her knowledge footprint and knowledge graph.</p></li>
+</ul>
+<p>e # Implementation</p>
+<p>In this section, we set out to answer the following question:</p>
+<blockquote>
+<p>How might we approach designing such a knowledge ecosystem?</p>
+</blockquote>
+<p>We will take a tour through a relevant set of implementations of the elements within the proposed knowledge ecosystem. We will present the relevant research in machine learning for each of the elements and also propose a new artificial neural network architecture, Educational Content to Question Answer (DeepEdu) network, with the details needed to design such a network.</p>
+<h2 id="problem-formulation">Problem Formulation</h2>
+<p>Building such a knowledge ecosystem is a non-trivial task. As we discussed earlier, here are a few key elements of our ecosystem:</p>
+<ol type="1">
+<li><p><strong>Learning + Feedback [DeepEdu]</strong> – given a learner views a single educational content, reliably evaluate their knowledge and provide feedback for improvement to support learning (credibility, rigour)</p></li>
+<li><p><strong>Knowledge Graph</strong> – relate any educational content to a concept which belongs to a particular subject, (relatibility, predictability)</p></li>
+<li><p><strong>Knowledge Journeys</strong> – given educational content, a learner’s score on such content, and history of viewing and testing use the knowledge graph to map the learner’s journey over time, offer a way for a learner to compare, connect with, and follow another’s journey (compare, traverse)</p></li>
+<li><p><strong>Knowledge Footprint</strong> – given a learner’s journey, collapse it into a representative symbol(s) (relatability, stable but evolving system )</p></li>
+</ol>
+<p>Much of element two (#2) and element one (#1) is possible with the recent breakthroughs in the machine learning and deep learning. Elements three (#3) and (#4) may require a different approach to tie the other elements together. We see #3 and #4 as design problems to be approached from the bottom up. In this section, we will mainly focus on the first two (#1 &amp; #2) elements.</p>
+<h3 id="before-we-start">Before we start…</h3>
+<p>As discussed above, recent trends in deep learning have produced state-of-art results on many of the tasks that are needed in our system.</p>
+<p>To best illustrate the problem and the possible solutions, we will focus solely on a specific type of educational content educational videos (i.e.Youtube or how-to videos). Keep in mind that our ultimate goal is to apply our approaches to any type of educational content including open texts, digital texts, audio or podcasts.</p>
+<p>Let us now explore some of the recent research findings that would enable us to bring our knowledge ecosystem to live.</p>
+<h2 id="learning-feedback-deepedu">Learning + Feedback [DeepEdu]</h2>
+<h3 id="problem-formulation-1">Problem Formulation</h3>
+<p>In short, in this section we will be providing some insights into how to solve the following puzzle:</p>
+<blockquote>
+<p>“how can we take a single educational content (ie. video/podcast) and properly test the learner’s knowledge and mastery of the content?”.</p>
+</blockquote>
+<h3 id="the-approach">The Approach</h3>
+<p>We consider learning + feedback as a key component of our ecosystem which would settle our concerns of passive knowledge consumption and untested knowledge.</p>
+<p>Based on the above concerns we’ll take a novel approach to ensure that our DeepEdu networks can do the following:</p>
+<ol type="1">
+<li><p>Generate a set of questions and answers for any educational content (Domain: Question and Answer Generation)</p></li>
+<li><p>Evaluate closed and open-ended answers (Domain: Automatic Answer Evaluation)</p></li>
+<li><p>Provide a score for the content based on the learner’s performance (Domain: Aggregate scoring)</p></li>
+</ol>
+<p>The ideal result is to test the learner’s knowledge by asking questions and evaluating responses given a set of concepts and the learner’s history knowledge.</p>
+<p>Now let’s start exploring some solutions that are made possible with the most recent deep learning models.</p>
+<h3 id="qg-and-qa-overview">QG and QA Overview</h3>
+<p>In previous years, deep learning research has taken up a similar problem titled Question Generation (QG) and Question Answering (QA).</p>
+<p>Question Generation (QG) was originally part of NLP. The goal of QG is to generate questions according to some given information. It could be used in many different scenarios (i.e. generating questions for reading comprehension, generating data from large-scale question-answering pairs or even generating questions from images). Earlier approaches to QG mainly used human-crafted rules and patterns to transform a descriptive sentence to a related question. Recent neural network-based approaches represent the state-of-art of most of those tasks and these approaches have been successfully used to solve many other NLP tasks (i.e. neural machine translation, summarization, etc.), as the training optimization studies progress, the stability and performance improvements could enhance our ability to generate relevant questions and answers.</p>
+<p>As for generating correct answers to questions, Question Answering (QA), this is one of the most popular research domains in NLP just as well. Recently, QA has also been used to develop dialogue systems and chatbots designed to simulate human conversation.</p>
+<p>Traditionally, most of the research used a collection of conventional linguistically-based NLP techniques (i.e. parsing, part-of-speech tagging and coreference resolution. However, with recent advances in deep learning, neural network models have shown promising results. Further improvements (i.e.attention mechanism and memory networks) allow the network to focus on the most relevant facts such that they can reach the new state-of-art performance for QA.</p>
+<p>Now we have some basic understanding of these 2 tasks for which we will be expanding more in depth later. Consider the next question:</p>
+<blockquote>
+<p>“what types of questions &amp; answers would be best to test a learner’s knowledge given a piece of educational content (i.e. a lecture video)”</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<p>Imagine a learner is watching a video about hypothesis testing and, midway through the video, the educator shows an example and provides the data needed to test the hypothesis. It would be very beneficial for a learner if during this time his/her knowledge is tested with the following example questions:</p>
+<ol type="1">
+<li><p>What is the definition of the p-value? (multiple choice)</p></li>
+<li><p>Is this a 1-sided test? (YES or NO)</p></li>
+<li><p>How would you interpret the p-value in the context of this example? (open-ended)</p></li>
+<li><p>What is the difference between the null hypothesis and alternative hypothesis based on the previous comparison? (open-ended)</p></li>
+<li><p>Give me a quick summary about what you have learned through this video or this example. (Open-ended)</p></li>
+</ol>
+<p>As shown above, we would call questions #1 and #2 the close-ended questions; question #3 and #4 the specific open-ended questions; and question #5 a general open-ended question.</p>
+<p>Based on the above information, we can update our question formulation into:</p>
+<ol type="1">
+<li><p>Generate close-ended question + answers pairs</p></li>
+<li><p>Generate specific open-ended question + answers pairs</p></li>
+<li><p>Evaluate and comment on the general open-ended answers</p></li>
+</ol>
+<p>In terms of the close-ended questions, the answers can be well defined and evaluated. However, the process might be more complex for the open-ended ones. We will approach each of them here from the current research perspective.</p>
+<p><strong>Why deep learning? </strong></p>
+<p>As we stated above, deep learning has achieved state-of-art performance in both QG and QA tasks, but how?</p>
+<p>If you pay close attention to QG and QA type of problems, you can easily reframe the problem into the one in which the model is expected to learn the relationship between the input (educational content) and the output (meaningful question &amp; answer pairs). In other words, if we can provide the needed data for the model, the model will learn a function that captures the relationship between our input and output, or, appropriately map the educational content to the desired question and answer pairs.</p>
+<p>To the best of our knowledge, deep learning is one of the most optimal techniques currently developed for learning such complex representations of complex data such as video lectures.</p>
+<p>By definition, machine learning is a subfield of Artificial Intelligence that uses statistical learning techniques to give the machine the ability to learn from the data. It explores the algorithms that can be used to parse data, learn from the data, and then apply what they have learned to make an inference. Deep learning is a subset of machine learning that belongs to the family of representation learning. Inside this family, deep learning is particularly good at sampling the features and having additional layers for more abstract feature learning. All of these special properties are crucial for building our DeepEdu networks.</p>
+<p>Moreover, deep learning is known as one of the most flexible machine learning algorithms for learning and mapping a <strong>deep representation</strong> of supervised concepts within the data. Deep neural network architecture can be composed into a single differentiable function and trained end-to-end until it converges. As a result, they can help identify the suitable <em>inductive</em> <em>biases</em> catered to the training data.</p>
+<p>Specifically, deep learning outperforms other techniques when the training data size is large. In our case, we could easily find a large amount of educational content available on the web.</p>
+<p>Having a large amount of training data is very troublesome if you plan to do feature engineering manually. When there is a lack of domain understanding for feature introspection, deep learning is preferable.</p>
+<p>In the end, deep learning really shines when it comes to many specialized research problems such as NLP, Visual Recognition and Speech recognition. For creating our DeepEdu, all those domains will be involved.</p>
+<h3 id="question-generation-qg">Question Generation (QG)</h3>
+<p>Let’s begin with question generation (QG) task.</p>
+<p>The ideal goal of an automatic question generation is to generate a question <span class="math inline">\(Q\)</span> that is syntactically and semantically correct, relevant to the context and match to a set of answers.</p>
+<p>In order to achieve this goal, we need to train an algorithm to learn the underlying conditional probability distribution</p>
+<p><span class="math display">\[P_{\theta}(Q|X)\]</span></p>
+<p>parametrized by <span class="math inline">\(\theta\)</span>. In other words, we can think of this problem as the one that requires the model to learn a function (with a set of parameters) <span class="math inline">\(\theta\)</span> during the training stage using content-question and/or answer sets so that the probability/likelihood <span class="math inline">\(P_{\theta}(Q|P)\)</span> is maximized over the given training dataset.</p>
+<p>We can also think of this problem as a typical seq2seq (sequence-to-sequence) learning problem since both the input and the output are a sequence of text character that the model needs to process and learn from. But in our case, we would like to take any media type and map it to a character output.</p>
+<p><strong>Case Studies</strong></p>
+<ol type="1">
+<li>In this paper <a href="http://www.princeton.edu/~shitingl/papers/18l@s-qgen.pdf">QG-Net: A Data-Driven Question Generation Model for Educational Content</a> <span class="citation" data-cites="zichaowang">(Wang <a href="#ref-zichaowang">2018</a>)</span>. They use a bi-directional LSTM network to process the input context words sequence. Encoding the answer into context word vectors.</li>
+</ol>
+<p>QG-Net generates questions by iteratively sampling question words from the conditional probability distribution <span class="math display">\[P(Q|C,A,\theta)\]</span> where <span class="math inline">\(\theta\)</span> denotes a set of parameters. In order to construct the probability distribution, they first create a <strong>context reader</strong> that processes each word <span class="math inline">\(c_j\)</span> in the input context and turns it into a fix-sized representation <span class="math inline">\(h_j\)</span></p>
+<p>Meanwhile, they also have a <strong>question generator</strong> that generates the question text word-by-word, given all context word representation and the set of question words in previous time steps.</p>
+<p>As for quantitative evaluation, they aimed to minimize the difference between the generated question and the true question in the training set during training using the standard back-propagation through time with mini-batch stochastic gradient descent algorithm to learn the model parameters. To ensure the performance, they employ <em>teacher forcing</em> procedure for training the LSTM with a standard implementation of beam search, a greedy but effective approximation, to exhaustively search and select the top 25 candidate output question sentences. The final one would be the one with the lowest negative log likelihood.</p>
+<p>The high-level QG-Net architecture is as below:</p>
+<figure>
+<img src="img/qgnet.png" alt="ma" /><figcaption>ma</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>In this paper <a href="https://openreview.net/pdf?id=rk3pnae0b">Topic-based Question Generation</a> <span class="citation" data-cites="anonymous">(authors <a href="#ref-anonymous">2018</a>)</span>, they propose a topic-based question generation algorithm. The algorithm is able to take in an input sentence, a topic and a question type and generate a word sequence related to the topic, question type and the input sentence.</li>
+</ol>
+<p>They formulate a conditional likelihood objective function as mentioned before to the model to learn.</p>
+<p>Also, they go through a few general frameworks that have been employed for solving a similar problem.</p>
+<ul>
+<li><p>The first one is the <em>seq2seq model</em> that uses a bidirectional LSTM as the encoder to encode a sentence and an LSTM RNN (Recurrent Neural Network) as the decoder to generate the target question.</p></li>
+<li><p>The second approach is <em>question pattern prediction and question topic selection algorithms</em>. They take in an automatically selected phrase Q and fill this phrase into the pattern that was predicted from pre-mined patterns.</p></li>
+<li><p>The last approach is <em>multi-source seq2seq learning</em> which aims to integrate information from multiple sources to boost learning.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1808.04961.pdf">A Framework for Automatic Question Generation from Text using Deep Reinforcement Learning</a> <span class="citation" data-cites="vishwajeet">(Kumar <a href="#ref-vishwajeet">2018</a>)</span>, they implement a reinforcement learning(RF) framework that consists of a generator and an evaluator for this task.</li>
+</ol>
+<p>They refer to <em>the generator</em> part of the model as the <span class="math inline">\(agent\)</span> and the <span class="math inline">\(action\)</span> of the agent is to generate the next work in the question. The probability of decoding a word is <span class="math display">\[P_{\theta}(word)\]</span> with a stochastic policy.</p>
+<p><em>The evaluator</em> part of the model then assigns a <span class="math inline">\(reward\)</span> to the output sequence predicted using the current <span class="math inline">\(policy\)</span> given by the generator. Based on the reward assigned by the evaluator, the generator updates and improves its current policy. In short, the goal in RL-based question generation is to find a policy that can maximize the sum of the <em>expected return</em> at the end of the sequence generation.</p>
+<p>** Summary **</p>
+<p>In this QG section, we have discussed 3 different algorithms. Based on our learning, we conclude that a generative seq2seq model might be a suitable option for this task. As for our objective function, we should be formulating a conditional probability distribution that is conditioned on the provided content (i.e. the video) and answers. As suggested, we can use a bi-directional LSTM RNN as the encoder to encode the content and an LSTM RNN as the decoder to generate the question.</p>
+<h3 id="question-answering-qa">Question Answering (QA)</h3>
+<p>Now, let’s move on to our question answering (QA) task. The general goal of QA is to predict the answer to a question based on the information found in the passage, given a passage and a question. By solving this task, our DeepEdu network should be able to easily evaluate the answer provided by learners and achieve full automation of learning + feedback cycle.</p>
+<p>Here is an overview of a basic QA model’s implementation <span class="citation" data-cites="qa_imp">(Kostadinov <a href="#ref-qa_imp">2017</a>)</span>:</p>
+<ol type="1">
+<li><p>Build representation for the passage and the question separately;</p></li>
+<li><p>Incorporate the question information into the passage;</p></li>
+<li><p>Get the final representation of the passage by directly matching it against itself;</p></li>
+<li><p>Generate the answer.</p></li>
+</ol>
+<p>And the typical mechanisms applied for solving such a problem include:</p>
+<ul>
+<li><p>Embedding</p></li>
+<li><p>Encoder Decoder</p></li>
+<li><p>Attention Mechanism</p></li>
+</ul>
+<p><strong>Close-ended Questions</strong></p>
+<p><strong>Visual Question Answering (VQA)</strong></p>
+<p>VQA is a challenging research problem that focuses on providing a natural language answer given any image and any free-form natural language question. As we are focused on video educational content first, our problem will include both NLP and visual recognition tasks. We figure VQA should be a great approach to start with.</p>
+<p><strong>Case Studies</strong></p>
+<ol type="1">
+<li>In this paper <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Yalong_Bai_Deep_Attention_Neural_ECCV_2018_paper.pdf">Deep Attention Neural Tensor Network for Visual Question Answering</a> <span class="citation" data-cites="yalong">(Bai <a href="#ref-yalong">2018</a>)</span>, they propose a novel <em>deep attention neural tensor network</em> that can discover the joint correlation over images, questions and answers with tensor-based representation.</li>
+</ol>
+<p>As for their workflow, the model one of the pairwise interaction (i.e. between image and question) by <strong>bilinear features</strong>, which is further encoded with the third dimension (i.e. answer) to be a triplet using a bilinear tensor product. During this step, the model takes in a question + a corresponding image + candidate answers as the input. A CNN (convolutional neural network) and a GRU RNN are used for extracting feature vectors and question respectively. Then the representation is passed on as a <em>multi-modal feature</em> and integrated by a <strong>bilinear pooling</strong> module. Moreover, they decompose the correlation of triplets by their question and answer types with a <strong>slice-wise attention module</strong> on the tensor to select the most discriminative reasoning process inference.</p>
+<p>In the end, they optimize the proposed network by learning a label regression with KL-divergence losses. They claimed that these techniques enable them to do scalable training and fast convergence over a large number of answer set. During the inference stage, they feed the embeddings of all candidate answer into the network and then select the answer which has the biggest triplet relevance score as the final answer.</p>
+<p>The high-level network architecture is as follows:</p>
+<figure>
+<img src="img/vqa.png" alt="Deep Attention Neural Tensor Network" /><figcaption>Deep Attention Neural Tensor Network</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1804.02088.pdf">Question Type Guided Attention in Visual Question Answering</a>, they propose a model called <strong>Question Type-guided Attention (QTA)</strong>. This model utilizes the information of question type to dynamically balance visual features from both top-down and bottom-up orders.</li>
+</ol>
+<p>Also, they propose a <em>multi-task extension</em> that is trained to predict question types from the lexical inputs during training which generalizes into applications that lack question type, with a minimal performance loss.</p>
+<p>As for their main contribution, they focus on developing an attention mechanism that can exploit high-level semantic information on the question type to guide the visual encoding process.</p>
+<p>Specifically, they introduce a novel VQA architecture that can dynamically gate the contribution of ResNet and Faster R-CNN features based on the question type. In turn, it allows them to integrate the information from multiple visual sources and obtain gains across all question types.</p>
+<ol start="3" type="1">
+<li>In this paper <a href="https://www.ijcai.org/proceedings/2018/0513.pdf">Multi-Turn Video Question Answering via Multi-Stream Hierarchical Attention Context Network</a> <span class="citation" data-cites="yangshi">(Shi <a href="#ref-yangshi">2018</a>)</span>, they propose a hierarchical attention context network for context-aware question understanding by modelling the hierarchically sequential conversation context structure. They incorporate the multi-step reasoning process into <strong>the multi-stream hierarchical attention context network</strong> to enable the progressive joint representation learning of the multi-stream attentional video and context-aware question embedding.</li>
+</ol>
+<p>To construct their dataset, they collected conversational video question answering datasets from <a href="http://upplysingaoflun.ecn.purdue.edu/~yu239/">YouTubeClips</a> and <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/vision-and-language/tacos-multi-level-corpus/">TACoS-MultiLevel</a>. The first dataset has 1987 videos and the second dataset has 1303 videos. They invited 5 pairs of crowd-sourcing workers to construct 5 different conversational dialogues. In total, they collected 37228 video question answering pairs for TACoS-MultiLevel data and 66806 for YouTubeClips data.</p>
+<ol start="4" type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1512.02902.pdf">MovieQA: Understanding Stories in Movies through Question-Answering</a> <span class="citation" data-cites="makarand">(Tapaswi <a href="#ref-makarand">2016</a>)</span>, they construct a new dataset ** MovieQA** dataset that can be used to evaluate automatic story comprehension from both video and text.</li>
+</ol>
+<p>They collect 408 subtitled movies and obtained their extended summaries in the form of <strong>plot synopses</strong>(movie summaries that fans write after watching the movie) from Wikipedia. They used plot synopses as a proxy for the movie. They have annotators create both quizzes and answers pairs by referring to the story plot. Time-stamp is also attached to each question and answer pair.</p>
+<p>In the second step of data collection, they used the multiple-choice answers and question collected as the input to show to a different group of annotators. By doing so, annotators could re-formulate the question and answers for a sanity check.</p>
+<p>** Summary **</p>
+<p>By going through the previous examples, we can see that VQA and a few similar algorithms are designed to efficiently process image and text input while making the inference based on it.</p>
+<p>First, the key components for creating and training a VQA model include feature selection, feature pooling and a specially designed attention mechanism. The input of the model is typically a video clip + question + answer pairs. A CNN and sometimes an RNN is needed for such a task.</p>
+<p>Another important learning is that we can follow the steps described in MovieQA example to collect and annotate our training data by asking crowd-sourcing workers to construct the question and answer pairs. Also, more advanced algorithms like multi-stream hierarchical attention context network might be necessary for a better performance.</p>
+<p><strong>Dual Question-Answering Model</strong></p>
+<p>Both Question Generation(QG) and Question Answering(QA) are two well-defined sets of problems that aim to either infer a question or an answer given the counterpart based on the context. However, they are usually explored separately despite their intrinsic complementary relationship. However, our DeepEdu network needs to take on both roles simultaneously.</p>
+<blockquote>
+<p>How might we solve this issue?</p>
+</blockquote>
+<p>Let’s look into a few algorithms are designed for this.</p>
+<p><strong>Case Studies</strong></p>
+<ol type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1809.01997.pdf">Dual Ask-Answer Network for Machine Reading Comprehension</a> <span class="citation" data-cites="xiaohan">(Xiao <a href="#ref-xiaohan">2018</a>)</span>, they present a model that can learn question answering and question generation simultaneously. They tie the network components that playing similar roles into 2 tasks to transfer cross-task knowledge during training.</li>
+</ol>
+<p>Then <em>the cross-modal interaction</em> of a question, context and answer are captured with a pair of <strong>symmetric hierarchical attention</strong> processes.</p>
+<p>The high-level architecture of the model is illustrated as below:</p>
+<figure>
+<img src="img/qgqa.png" alt="Dual Ask-Answer Network 1" /><figcaption>Dual Ask-Answer Network 1</figcaption>
+</figure>
+<figure>
+<img src="img/daan.png" alt="Dual Ask-Answer Network 2" /><figcaption>Dual Ask-Answer Network 2</figcaption>
+</figure>
+<p>In short, the model is composed of the following components: embedding layer, encoding layer, attention layer and the output layer. The model is fed with a question-context-answer triplet <span class="math inline">\((Q,C,A)\)</span> and the decoded Q and A from the output layer. Their loss function consists of two parts:</p>
+<ul>
+<li>negative log-likelihood loss</li>
+<li>a coverage loss (penalize repetition of the generated text)</li>
+</ul>
+<ol start="2" type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1805.05942.pdf">Harvesting Paragraph-Level Question-Answer Pairs from Wikipedia</a> <span class="citation" data-cites="duxinya">(Du <a href="#ref-duxinya">2018</a>)</span>, they apply their question-answer pair generation system to 10000 top-ranking Wikipedia articles and create over a million question-answer pairs.</li>
+</ol>
+<p>In their task formulation part, they clarify that they break this task into 2 sub-tasks:</p>
+<ul>
+<li>candidate answer extraction</li>
+<li>answer-specific question generation</li>
+</ul>
+<p>To complete the tasks, they first identify a set of question-worthy candidate answer set <span class="math inline">\(ans = (A1, A2,...Ai)\)</span>. For each candidate answer <span class="math inline">\(A_i\)</span>, they then aim to generate a question <span class="math inline">\(Q\)</span> -a sequence of tokens <span class="math inline">\({y1,y2,...yn}\)</span> - based on the sentence S that contains candidate <span class="math inline">\(A_i\)</span> such that - Q asks about an aspect of <span class="math inline">\(A_i\)</span> (of potential interest to a human) - Q might rely on information from sentences that precedes S in the paragraph.</p>
+<p>Mathematically, they compose a function <span class="math display">\[Q = argmax_Q P(Q|S,C)\]</span>.</p>
+<ol start="3" type="1">
+<li>In this paper <a href="http://cvboy.com/pdf/publications/cvpr2018_iqan.pdf">Visual Question Generation as Dual Task of Visual Question Answering</a> <span class="citation" data-cites="liyikang">(Li <a href="#ref-liyikang">2018</a>)</span>, they propose an end-to-end unified model, <strong>Invertible Question Answering (iQAN)</strong> to introduce question generation as a dual task of question answering to improve VQA performance.</li>
+</ol>
+<p>In achieving their goal, they leverage the <strong>dual learning</strong> framework that is proposed in machine translation area initially, which uses <span class="math inline">\(A-to-B\)</span> and <span class="math inline">\(B-to-A\)</span> translation models to form two closed translation loops and let them teach each other through a <em>reinforcement learning process</em>.</p>
+<p>In their VQA component, given a question <span class="math inline">\(q\)</span>, an RNN is used for obtaining the embedded feature <strong>q</strong>, and CNN is used to transform the input image <span class="math inline">\(v\)</span> into a feature map. A <em>MUTAN-based attention module</em> is then used to generate a question-aware visual feature <span class="math inline">\(v_q\)</span> from the image and the question. Later, another <em>MUTAN fusion module</em> is used for obtaining the answer feature <span class="math inline">\(a\hat{}\)</span></p>
+<ol start="4" type="1">
+<li>In this paper <a href="https://arxiv.org/pdf/1709.01058.pdf">A Unified Query-based Generative Model for Question Generation and Question Answering</a> <span class="citation" data-cites="songlinfeng">(Song <a href="#ref-songlinfeng">2018</a>)</span>, they propose a query-based generative model for solving both tasks. The model follows the classic <em>encoder-decoder</em> framework. The <strong>multi-perspective matching encoder</strong> that they are implementing is a bi-directional LSTM RNN model that takes a passage and a query as input and perform query understanding by matching it with the passage from multiple perspectives;</li>
+</ol>
+<p>The decoder is a<strong>attention-based LSTM RNN</strong> model with <em>copy and coverage</em> mechanism. In the QG task, a question will be generated from the model given the passage and the target answer; whereas in the QA task, the answer will be generated given the question and the passage.</p>
+<p>They also leverage a <em>policy-gradient reinforcement learning</em> algorithm to overcome <em>exposure bias</em> (a major problem resulted from sequence learning with cross-entropy loss function).</p>
+<p>The case both QG and QA tasks into one process by firstly matching the input passage against the query, then generating the output based on the matching results.</p>
+<p>As for the training, they first pre-train the model with cross-entropy loss and then fine-tune the model parameters with policy-gradient reinforcement learning to alleviate the exposure bias problem. They end up adopting a similar sampling strategy as the scheduled sampling strategy for generating the sampled output during the reinforcement learning process.</p>
+<p>** Summary **</p>
+<p>As mentioned earlier, QG and QA tasks are intrinsically bounded and one cannot find the solution for either of them without taking the other party into account.</p>
+<p>In this section, we have discussed some approaches that many groups of people have taken to help the machine operate on both tasks simultaneously.</p>
+<p>For our problem, it is very motivating to see the current progress and how much we can learn from their approaches. In sum, our general setup is most similar to the dual learning framework. We need to tie QG and QA together and also map it to concepts. In the first diagram of the section, we can see that they connect the loss function from both sides of the model and it is very similar to the strategy adopted by <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">GAN</a> (Generative adversarial network). Some advanced mechanisms are proposed as well for effectively solving these tasks (i.e. symmetric hierarchical attention and policy-gradient reinforcement learning algorithm.</p>
+<p><strong>Open-ended Question</strong></p>
+<p><strong>Problem Formulation</strong></p>
+<blockquote>
+<p>Open-ended questions bring clarity.</p>
+</blockquote>
+<p>As we mentioned above, the open-ended question could be roughly split into two categories. A general open-ended question or a specific open-ended question.</p>
+<p>Technically speaking, these two categories are not that particular distinct since both problems require the system to draw a conclusion based on the context and question provided. As for the answer, it is allowed to have a pretty high degree of freedom. Therefore, our system should be able to evaluate the answer with relatively flexible rules or standards including flexibility in media type.</p>
+<p>Based on our assumptions, we will combine these two problems into one for our investigation.</p>
+<p>It may appear unapproachable at first glance to teach a system to generate correct answers for and evaluate open-ended answers. Again, we need to reframe our problem and then break it apart.</p>
+<p>Based on our research, we believe it is helpful to think of this type of issue as a particular type of QA problem; the difference is that after the QA procedure, we need to match and evaluate the answers generated by the machine and the learner such that we can provide an adequate evaluation.</p>
+<p>Let’s start by looking at an existing knowledge evaluation system that has been used for grading the essays automatically - <strong>Automated essay scoring (AES)</strong>. AES focuses on automatically analyzing the quality and assigning a score to a given writing. AES systems rely not only on grammars, but also on more complex features such as semantics, discourse and pragmatics.</p>
+<p>It has four general types:</p>
+<ul>
+<li><p>Essay Grade: it is known as the first AES system.</p></li>
+<li><p>Intelligent Essay Assessor: it is using Latent Semantic Analysis features</p></li>
+<li><p>E-rater: it has been used by the ETS to score essay portion of GMAT</p></li>
+<li><p>IntelliMetric: it is developed and used by the College Board for placement purposes.</p></li>
+</ul>
+<p>Below are some research findings we consider as useful for our unified goal.</p>
+<p><strong>Case Studies</strong></p>
+<ol type="1">
+<li>In this paper <a href="http://aclweb.org/anthology/N18-1024">Neural Automated Essay Scoring and Coherence Modeling for Adversarially Crafted Input</a> <span class="citation" data-cites="youmna">(Farag <a href="#ref-youmna">2018</a>)</span>, they develop a network that can effectively learn connectedness features between sentences and propose a framework for integrating and jointly training the local coherence model with a state-of-art AES.</li>
+</ol>
+<p>They examine the robustness of the AES model on adversarially crafted input and specifically focus on input related to local coherence; A local coherence model can evaluate the writing based on its ability to rank coherently ordered sequence of sentences higher than their counterparts.</p>
+<p>The models they used are <em>Local Coherence (LC)</em> model and LSTM AES model. The first model has 2 main parts: sentence representation and clique representation; and the second model is a combined model that does vector concatenation and joint learning.</p>
+<ol start="2" type="1">
+<li>In this paper <a href="https://www.ijcai.org/proceedings/2018/0512.pdf">Open-Ended Long-form Video Question Answering via Adaptive Hierarchical Reinforced Networks</a> <span class="citation" data-cites="zhaozhou">(Zhao <a href="#ref-zhaozhou">2018</a>)</span>, they study the problem of open-ended video question answering from the viewpoint of the <em>adaptive hierarchical reinforced encoder-decoder network</em> learning.</li>
+</ol>
+<p>They present the adaptive hierarchical encoder network to learn the joint representation of the long-form video contents according to the question with adaptive video segmentation. They also develop the reinforced decoder network to generate the neural language answer for open-ended video question answering. Meanwhile, they construct a large-scale dataset for open-ended long-form video QA and validate the effectiveness of the proposed method.</p>
+<p>The framework of <strong>Adaptive Hierarchical Reinforced Networks</strong> is are below:</p>
+<figure>
+<img src="img/oe.png" alt="Open-Ended Long-form Video QA Network" /><figcaption>Open-Ended Long-form Video QA Network</figcaption>
+</figure>
+<p>The first part of the model is the hierarchical encoder networks that learn the joint representation of multimodal attentional video and textual question with adaptive video segmentation.</p>
+<p>The second part is the reinforced decoder networks that generate the natural language answers for open-ended video question answering.</p>
+<ol start="3" type="1">
+<li>In this paper, <a href="https://arxiv.org/pdf/1805.11752.pdf">Multi-turn Dialogue Response Generation in an Adversarial Learning Framework</a> <span class="citation" data-cites="oluwatobi">(Olabiyi <a href="#ref-oluwatobi">2018</a>)</span>, they propose an adversarial learning approach that can generate multi-turn dialogue responses. The network framework that they introduce is called <em>hredGAN</em> that is based on <em>conditional GANs</em>. The generator part of the model is a modified <strong>hierarchical recurrent encoder-decoder network (HRED)</strong> and the discriminator is a word-level bi-directional LSTM RNN that shares context and word embedding with the generator.</li>
+</ol>
+<p>During the inference step, <em>noise sampling</em> is conditioned on the dialogue history and is used to perturb the generator’s latent space for generating possible responses. The final response is the one ranked the best by the discriminator.</p>
+<p>In sum, their hredGAN combines both generative and retrieval-based multi-turn dialogue systems to improve the model’s performance. One of the special design of the model is that the generator and the discriminator share the context and word embedding and this allows for joint end-to-end training using back-propagation.</p>
+<p>** Summary **</p>
+<p>Based on our limited research, we find that it is achievable to generate the answers for open-ended questions based on the educational video and provide appropriate feedback/rating based on the current techniques. The first paper presents a newly developed AES model that rates learner’s writing by taking into account a specified metrics. It also demonstrates a possible approach to enhance any given AES model by training it with the adversarially crafted input.</p>
+<p>In the second paper, we investigate a network that is able to answer the open-ended questions based on the video and a given question. The Adaptive Hierarchical Reinforced Networks they proposed is composed of hierarchical encoder networks and the reinforced decoder networks. It is possible for us to adopt their general framework trained with our educational video data specifically.</p>
+<p>Similar to the second paper, the last paper indicates that we can generate responses conditioned on the context. By leveraging conditional GAN framework, their model performs very well on this task.</p>
+<h3 id="summary-of-learning-and-feedback-networks">Summary of Learning and Feedback Networks</h3>
+<p>Based on our previous discussion, we find that both QG and QA (including VQA) tasks have been well-studied. A number of specifically designed algorithms were presented and proved effective for solving these problems.</p>
+<p>There is also plenty of research has also been done in open-ended question answering realm. Though the performance may not be guaranteed, some techniques presented above are greatly relevant and thought-provoking such as AES model and open-ended question answering networks.</p>
+<p>Current research is promising but we need more research and innovation in this area.</p>
+<p>However, we are confident that by combining some techniques introduced before to create such a coherent DeepEdu network is not that far-fetched.</p>
+<h3 id="datasets-and-annotation-suggested">Datasets and Annotation Suggested</h3>
+<p>In order to approach this problem from scratch, we need to create our own dataset for which we will provide some related resources to start with:</p>
+<ol type="1">
+<li><a href="https://research.google.com/youtube8m/">YouTube-8M Dataset</a> <span class="citation" data-cites="youtube8m">(Abu-El-Haija <a href="#ref-youtube8m">2017</a>)</span>. This is a large-scale labelled video dataset that consists of millions of YouTube video IDs, with high-quality generated annotations from a diverse vocabulary of 3800+ visual entities. As you can see from its introduction, it comes with precomputed audio-visual features from billions of frames and audio segments. In short, we can expect the following content from this dataset:</li>
+</ol>
+<ul>
+<li><p>the dataset consists of 6.1M videos URLs, labelled with a vocabulary of 3863 visual entities</p></li>
+<li><p>the video-level dataset comes out to be 18 GB in size, while the frame-level features are approximately 1.3 TB</p></li>
+<li><p>it comes with pre-extracted audio &amp; visual features from every second of video.</p></li>
+</ul>
+<p>Though the video content is not limited to the education category, we can still use it to get a strong baseline model.</p>
+<p>Naturally, the next step would be to constrain our model to train particularly on educational content. The data needed for training may include the raw video clip, annotation/caption of the whole video content, and question + answer pairs (including the timestamps).</p>
+<ol start="2" type="1">
+<li>In this study <a href="http://jofdl.nz/index.php/JOFDL/article/download/255/198">Video Captions for Online Courses: Do YouTube’s Auto-generated Captions Meet Deaf Students’ Needs?</a> <span class="citation" data-cites="becky">(Parton <a href="#ref-becky">2016</a>)</span>, they studied auto-generated captions generated on YouTube online courses. They find that, on average, there were 7.7 phrase errors per minute of a total 68 minutes video caption. It implies that we cannot rely on the automated caption of the video, a lot more manual efforts are needed to fix this problem.</li>
+</ol>
+<p>Some other resources that might help:</p>
+<ol start="3" type="1">
+<li><a href="http://videomcc.org/">VideoMCC</a>. They formulate <em>Video Multiple Choice Caption (VideoMCC)</em> as a way to assess video comprehension through an easy-to-interpret performance measure. In their paper <a href="https://arxiv.org/pdf/1606.07373.pdf">VideoMCC: a New Benchmark for Video Comprehension</a> <span class="citation" data-cites="videomcc">(Tran et al. <a href="#ref-videomcc">2016</a>)</span>, they propose to cast video understanding in the form of multiple choice tests that assess the ability of the algorithm to comprehend the semantics of the video. An example is as below:</li>
+</ol>
+<figure>
+<img src="img/mcc.png" alt="VideoMCC" /><figcaption>VideoMCC</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>As what we have covered earlier, in this paper <a href="https://arxiv.org/pdf/1512.02902.pdf">MovieQA: Understanding Stories in Movies through Question-Answering</a>, they introduce a new dataset called MovieQA that can evaluate automatic story comprehension from both video and text.</li>
+</ol>
+<p>The 2 figures below can offer a better illustration:</p>
+<figure>
+<img src="img/movieqa1.png" alt="MovieQA_1" /><figcaption>MovieQA_1</figcaption>
+</figure>
+<figure>
+<img src="img/movieqa2.png" alt="MovieQA_2" /><figcaption>MovieQA_2</figcaption>
+</figure>
+<ol start="5" type="1">
+<li><p>In this paper <a href="https://arxiv.org/pdf/1806.00186.pdf">Video Description: A Survey of Methods, Datasets and Evaluation Metrics</a> <span class="citation" data-cites="nayyer">(Aafaq <a href="#ref-nayyer">2018</a>)</span>, they present multiple methods, datasets and evaluation metrics for video description task in a comprehensive survey.</p></li>
+<li><p>Lastly, in this paper <a href="https://arxiv.org/pdf/1808.07036.pdf">QuAC : Question Answering in Context</a> <span class="citation" data-cites="eunsol">(Choi <a href="#ref-eunsol">2018</a>)</span>, they present a <em>QuAC</em> dataset for QA task in Context that contains 14K information-seeking QA dialogs such as a student who poses a sequence of freeform question to learn as much as possible about a hidden Wikipedia text or a teacher who answers the questions by providing short excerpts from the text. Inspired by their idea and effort, we imagine that it is might be possible to develop a system that can also allow the learners to pause the video and to ask an information-seeking question. As a result, our system will find the answer based on the current content.</p></li>
+</ol>
+<h2 id="knowledge-graph">Knowledge Graph</h2>
+<p>Learning is a journey of knowledge accumulation and experience To create an adequate knowledge ecosystem requires us to first figure out what ‘knowledge’ really is and how to best represent it. <em>Knowledge Graph</em> is used as one of the tools to help make sense of what type or category acquired ‘knowledge’ is and what it is related to. You can think of knowledge graphs as a collection of relational facts, where each fact states that a certain relation holds between 2 entities.</p>
+<p>In this section, we will be discussing how we can construct our education specific knowledge graph from scratch.</p>
+<h3 id="what-is-a-graph">What is a graph?</h3>
+<blockquote>
+<p>Graphs are networks of dots and lines - Graph Theory (Dover Books)</p>
+</blockquote>
+<p>Mathematically speaking, graphs are mathematical structures used to model pairwise relations between objects. A graph in this context is made of vertices, nodes, or points which are connected by edges, arcs or lines. Typically a graph consists of two sets. A set of vertexes and a set of edges as below:</p>
+<p><span class="math display">\[GRAPH_{v,e} =
+ \begin{pmatrix}
+  v_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+  e_{2,1} &amp; e_{2,2} &amp; \cdots &amp; e_{2,n} \\
+ \end{pmatrix}\]</span></p>
+<h3 id="what-is-a-knowledge-graphkg">What is a Knowledge Graph(KG)?</h3>
+<p>As for the knowledge graph, it is a graph representation of a knowledge base. One of the most popular knowledge graphs is the multi-relational graph used by Google and its services to enhance the search engine’s results with information gathered from a variety of sources. Per Wikipedia, <a href="https://developers.google.com/knowledge-graph/#knowledge_graph_entities">Google’s Knowledge Graph</a> <span class="citation" data-cites="googlekg">(Google <a href="#ref-googlekg">2015</a>)</span> uses a graph database to provide structured and detailed information about the topic in addition to a list of links to other sites.</p>
+<p>In general, a knowledge graph represents a knowledge domain. It connects the objects and facts of different types in a systematic way. Knowledge graphs encode knowledge arranged in a network of nodes and links rather than tables and columns. With knowledge graphs, people and machines can easily capture and utilize a dynamically growing semantic network of facts about things. In other words, we can use it to connect the facts related to people, processes, applications, data and many other custom objects as well as their relationships among them with a structured knowledge graph.</p>
+<p>Also, plenty of successful applications show that people have applied knowledge graph successfully and efficiently to a variety of domains (i.e. to support semantic search(i.e. Google’s Knowledge Graph), personal assistant(i.e. Apple’s Siri) and deep question answering (i.e. Wolfram Alpha and IBM’s Watson).</p>
+<h3 id="problem-formulation-2">Problem Formulation</h3>
+<p>Given we’ve implemented the learning and feedback module, knowing where a given piece of education content fits into the knowledge space is a vital task if we want the knowledge footprint to make a learner predictable to others as well as being able to recommend new educational content that the learner can take on successfully. We will need the following things to connect our educational content:</p>
+<ul>
+<li><p>A classifier to take a piece of educational content</p></li>
+<li><p>A hierarchical algorithm that can map the relationship of the related content based on their hierarchy in the knowledge graph</p></li>
+<li><p>(optional) A probabilistic algorithm (i.e. Bayesian network to map the strength/significance of their relationship with each other</p></li>
+</ul>
+<p>In our case, a graph dedicated to education should do the following:</p>
+<ul>
+<li><p>Provide flexibility to add new subjects</p></li>
+<li><p>Connect related subjects to each</p></li>
+<li><p>Map concepts with the subject</p></li>
+<li><p>Connect concepts related to the content</p></li>
+</ul>
+<p>As shown before, here is how our graph will be used to support our ecosystem as a whole:</p>
+<figure>
+<img src="img/knowledgeEcosystem.png" alt="Knowledge Ecosystem" /><figcaption>Knowledge Ecosystem</figcaption>
+</figure>
+<h3 id="automatic-knowledge-graph-construction">Automatic Knowledge Graph Construction</h3>
+<p>Classic knowledge representation techniques allow a knowledge engineer to create rules that can be interpreted by a reasoner to infer new or missing triples(subject, predicate, object). These rules are usually expressed through an ontology which allows for the propagation of properties from top classes to the lower classes.</p>
+<p>However, we are looking for solutions that can allow us to complete our educational knowledge graph construction process automatically. Based on our research, generic knowledge graphs usually cannot sufficiently support many domain-specific applications (i.e. education) and finding the representation of the graph to feed the triples into a machine learning algorithm is still an open area of research.</p>
+<p>As a start, let’s focus on how we can automate our knowledge graph construction process.</p>
+<p><strong>Key Components</strong></p>
+<p>Here are some key components that worth highlighting before we dive deep into the possible solutions:</p>
+<ol type="1">
+<li><p><strong>Entity recognition</strong> that aims to extract the concept of interest from structured or unstructured data;</p></li>
+<li><p><strong>Relation identification</strong> that leverages on the semantic meaning of data.</p></li>
+</ol>
+<h3 id="case-studies">Case Studies</h3>
+<ol type="1">
+<li>In this paper <a href="https://ieeexplore.ieee.org/document/8362657">KnowEdu: A System to Construct Knowledge Graph for Education</a> <span class="citation" data-cites="knowedu">(Chen <a href="#ref-knowedu">2018</a>)</span>, the authors propose a system, titled <strong>KnowEdu</strong>, that can automatically construct a knowledge graph for education. In short, the system is able to extract concepts of subjects or courses and then identifies the educational relations between the concepts.</li>
+</ol>
+<p>More importantly, it adopts the <em>neural sequence labelling algorithm</em> on pedagogical data to extract instruction concepts. They then employ <em>probabilistic association rule mining</em> on learning assessment data to identify the significance of each of the relations.</p>
+<p>In sum, their system consists of the following modules:</p>
+<ul>
+<li><p>Instructional Concept Extraction Module to extract instructional concepts for a given subject or course.</p></li>
+<li><p>Educational Relation Identification Module to identify the educational relations that interlink instructional concepts to assist the learning and teaching process directly.</p></li>
+</ul>
+<p>Below is a block diagram of the KnowEdu System.</p>
+<figure>
+<img src="img/knowedu.png" alt="knowedu" /><figcaption>knowedu</figcaption>
+</figure>
+<p>Here are some algorithms they employ, they use a <em>conditional random field (CRF)</em> model for entity or terminology recognition task. They adopt a neural network, or more particularly Gated recurrent unit network (GRU) architecture for neural sequence labelling on educational entity extraction task.</p>
+<p>In terms of relation identification, they implement probabilistic association data mining techniques on learning assessment data and accomplish the task of educational relation identification.</p>
+<p>A snapshot of the knowledge graph for mathematics generated by knowedu system.</p>
+<figure>
+<img src="img/kg.png" alt="knowledge_graph" /><figcaption>knowledge_graph</figcaption>
+</figure>
+<p>Below are some papers related to Knowledge Graph embedding which is used to embed components of a KG including entities and relations into continuous vector space so as to simplify the manipulation while preserving the inherent structure of a KG.</p>
+<p>As for its benefits, it can help with numerous downstream tasks (i.e. KG completion and relation extraction, and hence be used to drastically improve the knowledge acquisition and mapping speed for our KG.</p>
+<ol start="2" type="1">
+<li>In this paper <a href="http://www.mlgworkshop.org/2018/papers/MLG2018_paper_5.pdf">Generalized Embedding Model for Knowledge Graph Mining</a> <span class="citation" data-cites="liuqiao">(Liu <a href="#ref-liuqiao">2018</a>)</span>, they present a model for learning neural presentation of generalized knowledge graphs using a novel <em>multi-shot unsupervised neural network</em> model, called the <strong>Graph Embedding Network (GEN)</strong>. This model is able to learn different types of knowledge graphs from a universal perspective and it provides flexibility in learning representations that work on graphs conforming to different domains.</li>
+</ol>
+<p>In developing their model, they extend the traditional one-shot supervised learning mechanism by introducing a <em>multi-shot unsupervised learning</em> framework where a 2-layer MLP network for every shot. This framework can, in turn, be used to accommodate both homogeneous and heterogeneous networks.</p>
+<ol start="3" type="1">
+<li>In this paper <a href="https://openreview.net/pdf?id=rJ4qXnCqFX">Probabilistic Knowledge Graph Embeddings</a> <span class="citation" data-cites="anony">(authors <a href="#ref-anony">2019</a>)</span>, they explored a new type of embedding model that can link prediction in relational knowledge graph. They are set out to solve a question with their approach that even large knowledge graphs typically contain only a few facts per entity, leading effectively to a small data problem where parameter uncertainty matters. As for the solution, they suggest that the knowledge graphs should be treated within a <em>Bayesian</em> framework.</li>
+</ol>
+<p>In short, they present a <em>probabilistic interpretation</em> of existing knowledge graph embedding models. By reformulating the models like ComplEx and DistMult, they construct the generative models for relational facts.</p>
+<p>They also apply <em>stochastic variational inference</em> to estimate an approximate posterior for each entity and relation embedding in the knowledge graph. By doing so, they can estimate the uncertainty, but more importantly, it allows them to use gradient-based hyperparameter optimization with stochastic gradient descent on the optimized variational bound.</p>
+<p>As a result, their model shows experimentally new state-of-art results in link prediction task.</p>
+<h3 id="summary">Summary</h3>
+<p>A significant amount progress has been made in automating knowledge graph using deep learning and other machine learning techniques based on our research.</p>
+<p>The first paper introduces a system that almost exactly matches our goal. They also demonstrate the current progress and possible solutions for solving each of the obstacles to developing an education based knowledge graph. In sum, for the instructional concept extraction task, they use a CRF model and a neural sequence labelling algorithm and they have proved effective for the task. They adopt a probabilistic data mining technique in learning assessment data to approximate the relations with educational significance.</p>
+<p>The last 2 papers demonstrate the progress that has been made in KG embedding learning domain. As mentioned above, it is one of the most effective methods in representing knowledge graphs. It is an indication that we should implement this approach to represent our knowledge graph for future knowledge acquisition, maintenance and continuous manipulation purposes.</p>
+<p><strong>Key Takeaways</strong></p>
+<ol type="1">
+<li><p>In terms of entity recognition task, We need to first get the data from the reliable open semantic sources (i.e. Wikipedia or Freebase. Or we can crawl the data on our own to collect more high-quality training data.</p></li>
+<li><p>Next, we need to apply the models to extract and map the entities. Besides the models mentioned above, there are plenty of great GitHub repositories that we can refer to help us with this task. Or we can look for the tools developed for this task (i.e. <em>node.js</em> and <em>Wolfram Mathematica embedded symbolic functions</em> or just simply build your own with <em>TensorFlow</em>. Some useful techniques that we should keep in mind are NLP and semantic data tagging/ labelling techniques.</p></li>
+<li><p>After the entity extraction and mapping, we need one or more algorithms to learn and capture the relationship among all entities (i.e. a probabilistic model.</p></li>
+<li><p>The last but the not the least, visualize our map.</p></li>
+</ol>
+<h3 id="datasets-and-annotation-suggested-1">Datasets and Annotation Suggested</h3>
+<ol type="1">
+<li><a href="https://ai.google/research/pubs/pub45634">Knowledge Vault</a>: A web-scale approach to probabilistic knowledge fusion. In this paper <a href="https://dejanseo.com.au/wp-content/uploads/2014/08/Knowledge-Vault-A-Web-Scale-Approach-to-Probabilistic-Knowledge-Fusion.pdf">Knowledge Vault: A Web-Scale Approach to Probabilistic Knowledge Fusion</a> <span class="citation" data-cites="dongxinluna">(Dong <a href="#ref-dongxinluna">2014</a>)</span>, they introduce the <strong>Knowledge Vault</strong> that combines extraction from the Web content (obtained through analysis of text, tabular data, page structure, and human annotation) with prior knowledge derived from existing knowledge repositories.</li>
+</ol>
+<p>They employ a supervised machine learning models for fusing these distinct information sources. As a result, their system can automatically construct a web-scale probabilistic knowledge base.</p>
+<ol start="2" type="1">
+<li><p><a href="https://developers.google.com/knowledge-graph/#knowledge_graph_entities">Google Knowledge Graph Search API</a>.</p></li>
+<li><p><a href="wikipedia.com">Wikipedia</a></p></li>
+<li><p><a href="Freebase.com">Freebase</a></p></li>
+</ol>
+<h2 id="knowledge-journeys-1">Knowledge Journeys</h2>
+<p>A collective knowledge graph is our ecosystem’s backbone. It can be applied universally to some extent, but a learner’s learning journey is highly personal and unique at the individual’s level. Every learner enters the system with their own set of problems that they are curious about and their specific missions towards the mastery. As a result, their knowledge journeys should vary significantly. As for our role, we need to ensure we have a system that can handle these high degrees of freedom. Or more ideally, to adaptively represent and learn from a learner’s history, interests, and whom they are related to best support their knowledge acquisition adventure.</p>
+<h3 id="problem-formulation-3">Problem Formulation</h3>
+<p>Below are few key makeups of our knowledge journeys:</p>
+<ol type="1">
+<li><p>First, we need to have a system that can match all the content that a learner has acquired back to the collective educational knowledge graph;</p></li>
+<li><p>Generate their personal knowledge graph with the timestamps on each content and the subject(s) it belongs to;</p></li>
+<li><p>Unfold the timestamps and map the previous generated static knowledge graph onto a timeline and display a learner’s knowledge as a personal knowledge acquisition storyline/gallery;</p></li>
+<li><p>Adaptively update the journey along with a learner’s learning progress.</p></li>
+</ol>
+<p>As the outcome, a learner’s knowledge journey will be available anytime for the learner to look through and it makes it possible for them to easily go back in time to review a particular piece of content they have learned and for others to unfold their learning journey along the timeline for more details.</p>
+<h2 id="knowledge-footprint-1">Knowledge Footprint</h2>
+<p>Just a quick review of the concept, a learner’s knowledge footprint is going to be represented as one or more badges or symbols that act as a thumbnail view of a learner’s knowledge profile at a specific time point. In a sense, it will continuously evolve and be modified when a learner proceeds his/her learning journey. By constructing such symbol(s), a learner can easily understand their current knowledge profile relative to their past’s and to other’s and to timely make an adjustment to alter their future learning plan.</p>
+<p>As for the implementation, we would consider employing the unsupervised learning and dimensionality reduction techniques to help uncover and represent the visible and invisible dimensions of a learner’s knowledge journey. In turn, the model can consolidate and collapse the journey into one or more symbols to accurately represent a learner’s current knowledge profile. Still, it is not a trivial task and we believe it is going to be a teamwork that requires people like machine learning and deep learning researchers, educators, and designers to work collaboratively for the best possible outcomes.</p>
+<p>Note that we will not discuss the detailed research findings or implementation steps of Knowledge Journeys and Knowledge Footprint elements in this essay. We will leave these areas for our future research.</p>
+<h3 id="possible-next-steps">Possible Next Steps</h3>
+<p>As a reasonable next step, we would also like our system to be as personalized as possible so as to provide guidance for a learner along their knowledge journey, given that our system has already encoded and possessed the information of a learner’s knowledge footprint and journey.</p>
+<p>In this case, a recommender system might be a desirable choice for handling such a job since it is an intuitive line of defence against consumer over-choice given the ever-growing educational content available on the web.</p>
+<h1 id="next-steps">Next Steps</h1>
+<h2 id="overview">Overview</h2>
+<p>We have now proposed one approach to better represent a modern individual’s knowledge by taking the world of unstructured educational content (Youtube videos, Medium articles, etc), classifying it by its concepts which belong to one or more subjects from an education-based knowledge graph.</p>
+<p>We surveyed some of the relevant machine and deep learning research, proposed the Educational Content to Questions and Answers (DeepEdu) network, a novel neural network for taking in any type of educational content and generating a set of questions, answers, and the evaluation of a learner’s knowledge understanding without the need for the educator be involved.</p>
+<p>We then proposed to tie these components together as an adaptive knowledge ecosystem consisting of an individual’s knowledge footprint, mapped to a central knowledge graph, visualised over time as a learner’s knowledge journey. This would serve to support the independent (aspiring or current) learner to pursue their life-long education. It would take into consideration the education they acquired from unstructured sources, thereby formalising their informal knowledge for themselves and others.</p>
+<h2 id="challenges">Challenges</h2>
+<p>There will be many challenges in coming up with solutions to enable knowledge acquisition and representation at the learner and group level. We will address some of the primary challenges to designing the components of the proposed knowledge ecosystem:</p>
+<ul>
+<li><p>Datasets</p></li>
+<li><p>DeepEdu dataset</p></li>
+<li><p>Knowledge graph dataset</p></li>
+<li><p>Deep Learning Architecture</p></li>
+<li><p>DeepEdu network</p></li>
+</ul>
+<p>For our purposes, we will focus on the DeepEdu network and dataset as the main focus from here.</p>
+<h2 id="deepedu-dataset">DeepEdu dataset</h2>
+<p>The success of deep learning techniques is predicated on the assumption that one needs a significant amount of data to train a large neural network to learn the representation that can capture a set of admissible functions needed to learn the given concepts.</p>
+<p>The DeepEdu network will also face the same challenges. It requires a large dataset of educational content (i.e. Youtube videos, Wikipedia pages, Medium articles) along with a set of questions that have a set of correct and incorrect answers for each question.</p>
+<p><span class="math display">\[
+ \{content1: \{question1: \{answer1, answer2,...\},...
+\]</span></p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>However, there are many approaches we can decrease the amount of data needed while still learning a good representation of the concepts. We will present an approach that we believe can best utilise the intrinsic structure of educational content and use the minimal amount of data.</p>
+<ol type="1">
+<li><p>The network can be trained on unstructured educational content without questions or answers to create an <em>education embedding</em> by employing unsupervised techniques like variational auto-encoder (VAE). This requires a dataset of educational content, possibly many media types(audio/video/text). This could also be done by using a semi-supervised technique by supervising the media type and learning representations for the types of educational content.</p></li>
+<li><p>The network can then be trained on <strong>existing</strong> educational content that <em>already</em> has preexisting questions and answers for specific parts of the content (i.e. Khan Academy, Udacity, Coursera). The domain of structured educational content is surely very different from the unstructured content and may hinder the network but we believe it might be the case that it helps more than it hinders so it is worth experimenting.</p></li>
+<li><p>The final approach is annotating a set of unstructured educational content with questions and answers.</p></li>
+</ol>
+<h2 id="education-partners">Education Partners</h2>
+<p>The second (#2) approach requires a large amount of existing educational content paired with existing questions and answers. This data is rich and informative; it could help us learn an early representation and create a strong baseline model. Most of these datasets have been created by experts and educators and their efforts could be valuable for our model to learn from. For this purpose, we would need to partner with large (in terms of a library of content) educational institutions (i.e. Udacity, Coursera, MOOCs, Edx, Khan Academy) to work with their datasets for pretraining and collaborate on how we annotate the space of unstructured educational content.</p>
+<h2 id="educator-enrichment">Educator Enrichment</h2>
+<p>The third (#3) dataset that would be used as our primary data source to train and test the model’s performance, remains the most important component as well as the most time and labour intensive one. Partnering with educators and subject matter experts to source the subspace of unstructured educational content and to create questions and answers, we would eventually arrive at a curated dataset that our model would be primarily trained on. The end result would be a new benchmark that other researchers can begin to build newer architectures to make progress in the problem domain.</p>
+<h2 id="minimum-viable-dataset-benchmark">Minimum Viable Dataset (Benchmark)</h2>
+<p>We propose to narrow the problem space and jumpstart research in this area by focusing on only one subject (i.e. psychology, mathematics, design) rather than trying to take on mapping the whole space of unstructured educational content. This drastically reduces the data that is needed and the number of experts and partners needed to kickstart the initiative.</p>
+<h2 id="call-for-collaborators">Call for collaborators</h2>
+<p>We hope to bring together collaborators that would include machine learning researchers, educators, technologists, and designers to begin our first foray into a modern knowledge ecosystem. Specifically starting with the DeepEdu dataset and network, one education subject, and at least one educational partner.</p>
+<p>Please email us at <a href="two@dyadxmachina.com">two@dyadxmachina.com</a> with the subject <em>Knowledge Ecosystem Initiative</em> or leave your email below for collaboration.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="mc_embed_signup">
+<form action="https://thechristianramsey.us6.list-manage.com/subscribe/post?u=e9cb6ddb243f988842739d69a&amp;id=09893f5522" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<div id="mc_embed_signup_scroll">
+<h3>
+We are looking for educators, researchers, and designers to collaborate. Send us your email to stay updated
+</h3>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label> <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div id="mce-responses" class="clear">
+<div id="mce-error-response" class="response" style="display:none">
+
+</div>
+<div id="mce-success-response" class="response" style="display:none">
+
+</div>
+</div>
+<div style="position: absolute; left: -5000px;" data-aria-hidden="true">
+<input type="text" name="b_e9cb6ddb243f988842739d69a_09893f5522" tabindex="-1" value="">
+</div>
+<div class="clear">
+<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+</div>
+</div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<p><br/></p>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>In conclusion, we presented a new perspective on knowledge acquisition and representation, proposed the concept of a modern and adoptive <em>knowledge ecosystem</em> that a learner can rely on upon through their entire educational lifetime.</p>
+<p>Our main task was to take an individual and begin to get a true depiction of their knowledge beyond their traditional degree, which is only a small percentage of one’s education.</p>
+<p>We focused on taking the world of unstructured educational content online, and providing structure in the form of testing and mapping it to a <em>knowledge graph</em>. We introduced the ideas of <strong>knowledge journeys</strong> and <strong>knowledge graph</strong> as means to make sense and structure a learner’s knowledge acquisition from 2 distinct perspectives - <em>temporal representation</em> vs <em>thumbnail profile</em>.</p>
+<p>There is still much more research to be done in bringing to life the <em>Educational Content to Questions and Answers (DeepEdu)</em> neural networks as well our ultimate knowledge ecosystem and collaboration required amongst machine learning researchers, educators, and designers,</p>
+<p>As deep learning researchers, we are looking forward to designing or seeing others design the minimum viable dataset, benchmark, and architecture motivated by this work.</p>
+<h1 id="about-the-authors">About the Authors</h1>
+<p>Independent deep learning researchers focused on using machine learning for the good of humanity and beyond.</p>
+<h2 id="haohan-wang">Haohan Wang</h2>
+<ul>
+<li><p><a href="https://www.linkedin.com/in/haohanw">LinkedIn</a></p></li>
+<li><p><a href="https://haohanwang.tumblr.com/">Tumblr</a></p></li>
+<li><p><a href="https://github.com/haohanwang23">Github</a></p></li>
+<li><p>Email: <a href="mailto:haohan723@gmail.com" class="email">haohan723@gmail.com</a></p></li>
+</ul>
+<h2 id="fanli-zheng-christian-ramsey">Fanli Zheng (Christian Ramsey)</h2>
+<ul>
+<li><p><a href="https://www.linkedin.com/in/christianramsey/">LinkedIn</a></p></li>
+<li><p><a href="https://anthrochristianramsey.tumblr.com/">Tumblr</a></p></li>
+<li><p><a href="https://github.com/christianramsey">Github</a></p></li>
+<li><p>Email: <a href="mailto:thechristianramsey@gmail.com" class="email">thechristianramsey@gmail.com</a></p></li>
+</ul>
+<h2 id="contact-us">Contact Us</h2>
+<p>Feel Free to contact us if you have any questions!</p>
+<ul>
+<li><p>Our Website <a href="dyadxmachina.com">dyad x machina</a></p></li>
+<li><p>Our Hub <a href="https://dyadxmachina.github.io/hub/">dyad x machina projects</a></p></li>
+<li><p>Our Github <a href="https://github.com/dyadxmachina">dyadxmachina</a></p></li>
+<li><p>Our Book <a href="m4dl.com">Mathematics for Deep Learning and Artificial Intelligence</a></p></li>
+</ul>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-nayyer">
+<p>Aafaq, Nayyer. 2018. “Video Description: A Survey of Methods, Datasets and Evaluation Metrics.” <a href="https://arxiv.org/pdf/1806.00186.pdf">https://arxiv.org/pdf/1806.00186.pdf</a>.</p>
+</div>
+<div id="ref-youtube8m">
+<p>Abu-El-Haija, Sami. 2017. “YouTube-8M Dataset.” <a href="https://research.google.com/youtube8m/">https://research.google.com/youtube8m/</a>.</p>
+</div>
+<div id="ref-anonymous">
+<p>authors, Anonymous. 2018. “Topic-Based Question Generation.” <a href="https://openreview.net/pdf?id=rk3pnae0b">https://openreview.net/pdf?id=rk3pnae0b</a>.</p>
+</div>
+<div id="ref-anony">
+<p>———. 2019. “Probabilistic Knowledge Graph Embeddings.” <a href="https://openreview.net/pdf?id=rJ4qXnCqFX">https://openreview.net/pdf?id=rJ4qXnCqFX</a>.</p>
+</div>
+<div id="ref-yalong">
+<p>Bai, Yalong. 2018. “Deep Attention Neural Tensor Network for Visual Question Answering.” <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Yalong_Bai_Deep_Attention_Neural_ECCV_2018_paper.pdf">http://openaccess.thecvf.com/content_ECCV_2018/papers/Yalong_Bai_Deep_Attention_Neural_ECCV_2018_paper.pdf</a>.</p>
+</div>
+<div id="ref-knowedu">
+<p>Chen, Penghe. 2018. “KnowEdu: A System to Construct Knowledge Graph for Education.” <a href="https://ieeexplore.ieee.org/document/8362657">https://ieeexplore.ieee.org/document/8362657</a>.</p>
+</div>
+<div id="ref-eunsol">
+<p>Choi, Eunsol. 2018. “QuAC : Question Answering in Context.” <a href="https://arxiv.org/pdf/1808.07036.pdf">https://arxiv.org/pdf/1808.07036.pdf</a>.</p>
+</div>
+<div id="ref-dongxinluna">
+<p>Dong, Xin Luna. 2014. “Knowledge Vault: A Web-Scale Approach to Probabilistic Knowledge Fusion.” <a href="https://dejanseo.com.au/wp-content/uploads/2014/08/Knowledge-Vault-A-Web-Scale-Approach-to-Probabilistic-Knowledge-Fusion.pdf">https://dejanseo.com.au/wp-content/uploads/2014/08/Knowledge-Vault-A-Web-Scale-Approach-to-Probabilistic-Knowledge-Fusion.pdf</a>.</p>
+</div>
+<div id="ref-duxinya">
+<p>Du, Xinya. 2018. “Harvesting Paragraph-Level Question-Answer Pairs from Wikipedia.” <a href="https://arxiv.org/pdf/1805.05942.pdf">https://arxiv.org/pdf/1805.05942.pdf</a>.</p>
+</div>
+<div id="ref-youmna">
+<p>Farag, Youmna. 2018. “Neural Automated Essay Scoring and Coherence Modeling for Adversarially Crafted Input.” <a href="http://aclweb.org/anthology/N18-1024">http://aclweb.org/anthology/N18-1024</a>.</p>
+</div>
+<div id="ref-googlekg">
+<p>Google. 2015. “Google Knowledge Graph.” <a href="https://developers.google.com/knowledge-graph/">https://developers.google.com/knowledge-graph/</a>.</p>
+</div>
+<div id="ref-qa_imp">
+<p>Kostadinov, Simeon. 2017. “How Does the [Current] Best Question Answering Model Work?” <a href="https://towardsdatascience.com/how-the-current-best-question-answering-model-works-8bbacf375e2a">https://towardsdatascience.com/how-the-current-best-question-answering-model-works-8bbacf375e2a</a>.</p>
+</div>
+<div id="ref-vishwajeet">
+<p>Kumar, Vishwajeet. 2018. “A Framework for Automatic Question Generation from Text Using Deep Reinforcement Learning.” <a href="https://arxiv.org/pdf/1808.04961.pdf">https://arxiv.org/pdf/1808.04961.pdf</a>.</p>
+</div>
+<div id="ref-liyikang">
+<p>Li, Yikang. 2018. “Visual Question Generation as Dual Task of Visual Question Answering.” <a href="http://cvboy.com/pdf/publications/cvpr2018_iqan.pdf">http://cvboy.com/pdf/publications/cvpr2018_iqan.pdf</a>.</p>
+</div>
+<div id="ref-liuqiao">
+<p>Liu, Qiao. 2018. “Generalized Embedding Model for Knowledge Graph Mining.” <a href="http://www.mlgworkshop.org/2018/papers/MLG2018_paper_5.pdf">http://www.mlgworkshop.org/2018/papers/MLG2018_paper_5.pdf</a>.</p>
+</div>
+<div id="ref-oluwatobi">
+<p>Olabiyi, Oluwatobi O. 2018. “Multi-Turn Dialogue Response Generation in an Adversarial Learning Framework.” <a href="https://arxiv.org/pdf/1805.11752.pdf">https://arxiv.org/pdf/1805.11752.pdf</a>.</p>
+</div>
+<div id="ref-becky">
+<p>Parton, Becky Sue. 2016. “Video Captions for Online Courses: Do Youtube’s Auto-Generated Captions Meet Deaf Students’ Needs?” <a href="http://jofdl.nz/index.php/JOFDL/article/download/255/198">http://jofdl.nz/index.php/JOFDL/article/download/255/198</a>.</p>
+</div>
+<div id="ref-yangshi">
+<p>Shi, Yang. 2018. “Question Type Guided Attention in Visual Question Answering.” <a href="https://arxiv.org/pdf/1804.02088.pdf">https://arxiv.org/pdf/1804.02088.pdf</a>.</p>
+</div>
+<div id="ref-songlinfeng">
+<p>Song, Linfeng. 2018. “A Unified Query-Based Generative Model for Question Generation and Question Answering.” <a href="https://arxiv.org/pdf/1709.01058.pdf">https://arxiv.org/pdf/1709.01058.pdf</a>.</p>
+</div>
+<div id="ref-makarand">
+<p>Tapaswi, Makarand. 2016. “MovieQA: Understanding Stories in Movies Through Question-Answering.” <a href="https://arxiv.org/pdf/1512.02902.pdf">https://arxiv.org/pdf/1512.02902.pdf</a>.</p>
+</div>
+<div id="ref-videomcc">
+<p>Tran, Du, Maksim Bolonkin, Manohar Paluri, and Lorenzo Torresani. 2016. “VideoMCC: A New Benchmark for Video Comprehension.” <em>CoRR</em> abs/1606.07373. <a href="http://arxiv.org/abs/1606.07373">http://arxiv.org/abs/1606.07373</a>.</p>
+</div>
+<div id="ref-zichaowang">
+<p>Wang, Zichao. 2018. “QG-Net: A Data-Driven Question Generation Model for Educational Content.” <a href="http://www.princeton.edu/~shitingl/papers/18l@s-qgen.pdf">http://www.princeton.edu/~shitingl/papers/18l@s-qgen.pdf</a>.</p>
+</div>
+<div id="ref-xiaohan">
+<p>Xiao, Han. 2018. “Dual Ask-Answer Network for Machine Reading Comprehension.” <a href="https://arxiv.org/pdf/1809.01997.pdf">https://arxiv.org/pdf/1809.01997.pdf</a>.</p>
+</div>
+<div id="ref-zhaozhou">
+<p>Zhao, Zhou. 2018. “Multi-Turn Video Question Answering via Multi-Stream Hierarchical Attention Context Network.” <a href="https://www.ijcai.org/proceedings/2018/0513.pdf">https://www.ijcai.org/proceedings/2018/0513.pdf</a>.</p>
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/dyadxmachina/hub/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="citation">Citation</h3>
+<p>For attribution, please cite this work as</p>
+<pre class="citation-appendix short">Zheng &amp; Wang (2018, Nov. 24). dyadxmachina projects: DeepEdu - Learning and Representation. Retrieved from https://dyadxmachina.github.io/can-machines-teach</pre>
+<p>BibTeX citation</p>
+<pre class="citation-appendix long">@misc{zheng2018deepedu,
+  author = {Zheng, Fanli (Christian) and Wang, Haohan},
+  title = {dyadxmachina projects: DeepEdu - Learning and Representation},
+  url = {https://dyadxmachina.github.io/can-machines-teach},
+  year = {2018}
+}</pre>
+</div>
+<script id="distill-bibliography" type="text/bibtex">
+@article{zichaowang,
+  title = {QG-Net: A Data-Driven Question Generation Model for Educational Content},
+  author = {Zichao Wang},
+  year = {2018},
+  url = {http://www.princeton.edu/~shitingl/papers/18l@s-qgen.pdf},
+}
+
+@article{anonymous,
+  title = {Topic-based Question Generation},
+  author = {Anonymous authors},
+  year = {2018},
+  url = {https://openreview.net/pdf?id=rk3pnae0b},
+}
+
+@article{vishwajeet,
+  title = {A Framework for Automatic Question Generation from Text using Deep Reinforcement Learning},
+  author = {Vishwajeet Kumar},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1808.04961.pdf},
+}
+
+@article{yalong,
+  title = {Deep Attention Neural Tensor Network for Visual Question Answering},
+  author = {Yalong Bai},
+  year = {2018},
+  url = {http://openaccess.thecvf.com/content_ECCV_2018/papers/Yalong_Bai_Deep_Attention_Neural_ECCV_2018_paper.pdf},
+}
+
+@article{yangshi,
+  title = {Question Type Guided Attention in Visual Question Answering},
+  author = {Yang Shi},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1804.02088.pdf},
+}
+
+@article{zhaozhou,
+  title = {Multi-Turn Video Question Answering via Multi-Stream Hierarchical Attention Context Network},
+  author = {Zhou Zhao},
+  year = {2018},
+  url = {https://www.ijcai.org/proceedings/2018/0513.pdf},
+}
+
+@article{makarand,
+  title = {MovieQA: Understanding Stories in Movies through Question-Answering},
+  author = {Makarand Tapaswi},
+  year = {2016},
+  url = {https://arxiv.org/pdf/1512.02902.pdf},
+}
+
+@article{xiaohan,
+  title = {Dual Ask-Answer Network for Machine Reading Comprehension},
+  author = {Han Xiao},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1809.01997.pdf},
+}
+
+@article{duxinya,
+  title = {Harvesting Paragraph-Level Question-Answer Pairs from Wikipedia},
+  author = {Xinya Du},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1805.05942.pdf},
+}
+
+@article{liyikang,
+  title = {Visual Question Generation as Dual Task of Visual Question Answering},
+  author = {Yikang Li},
+  year = {2018},
+  url = {http://cvboy.com/pdf/publications/cvpr2018_iqan.pdf},
+}
+
+@article{songlinfeng,
+  title = {A Unified Query-based Generative Model for Question Generation and Question Answering},
+  author = {Linfeng Song},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1709.01058.pdf},
+}
+
+@article{youmna,
+  title = {Neural Automated Essay Scoring and Coherence Modeling for Adversarially Crafted Input},
+  author = {Youmna Farag},
+  year = {2018},
+  url = {http://aclweb.org/anthology/N18-1024},
+}
+
+
+@article{zhaozhou,
+  title = {Open-Ended Long-form Video Question Answering via Adaptive Hierarchical Reinforced Networks},
+  author = {Zhou Zhao},
+  year = {2018},
+  url = {https://www.ijcai.org/proceedings/2018/0512.pdf},
+}
+
+
+@article{oluwatobi,
+  title = {Multi-turn Dialogue Response Generation in an Adversarial Learning Framework},
+  author = {Oluwatobi O. Olabiyi},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1805.11752.pdf},
+}
+
+
+@article{youtube8m,
+  title = {YouTube-8M Dataset},
+  author = {Sami Abu-El-Haija},
+  year = {2017},
+  url = {https://research.google.com/youtube8m/},
+}
+
+
+@article{becky,
+  title = {Video Captions for Online Courses: Do YouTube’s Auto-generated Captions Meet Deaf Students’ Needs?},
+  author = {Becky Sue Parton},
+  year = {2016},
+  url = {http://jofdl.nz/index.php/JOFDL/article/download/255/198},
+}
+
+@article{videomcc,
+  author    = {Du Tran and 
+               Maksim Bolonkin and
+               Manohar Paluri and
+               Lorenzo Torresani},
+  title     = {VideoMCC: a New Benchmark for Video Comprehension},
+  journal   = {CoRR},
+  volume    = {abs/1606.07373},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1606.07373}
+}
+
+@article{nayyer,
+  title = {Video Description: A Survey of Methods, Datasets and Evaluation Metrics},
+  author = {Nayyer Aafaq},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1806.00186.pdf},
+}
+
+
+@article{eunsol,
+  title = {QuAC : Question Answering in Context},
+  author = {Eunsol Choi},
+  year = {2018},
+  url = {https://arxiv.org/pdf/1808.07036.pdf},
+}
+
+@article{googlekg,
+  title = {Google Knowledge Graph},
+  author = {Google},
+  year = {2015},
+  url = {https://developers.google.com/knowledge-graph/},
+}
+
+
+@article{knowedu,
+  title = {KnowEdu: A System to Construct Knowledge Graph for Education},
+  author = {Penghe Chen},
+  year = {2018},
+  url = {https://ieeexplore.ieee.org/document/8362657},
+}
+
+
+@article{liuqiao,
+  title = {Generalized Embedding Model for Knowledge Graph Mining},
+  author = {Qiao Liu},
+  year = {2018},
+  url = {http://www.mlgworkshop.org/2018/papers/MLG2018_paper_5.pdf},
+}
+
+@article{anony,
+  title = {Probabilistic Knowledge Graph Embeddings},
+  author = {Anonymous authors},
+  year = {2019},
+  url = {https://openreview.net/pdf?id=rJ4qXnCqFX},
+}
+
+@article{dongxinluna,
+  title = {Knowledge Vault: A Web-Scale Approach to Probabilistic Knowledge Fusion},
+  author = {Xin Luna Dong},
+  year = {2014},
+  url = {https://dejanseo.com.au/wp-content/uploads/2014/08/Knowledge-Vault-A-Web-Scale-Approach-to-Probabilistic-Knowledge-Fusion.pdf},
+}
+
+
+@article{structureddata,
+  title = {Understand how structured data works},
+  author = {Google},
+  year = {2018},
+  url = {https://developers.google.com/search/docs/guides/intro-structured-data},
+}
+
+
+@article{qa_imp,
+  title = {How does the [current] best question answering model work?},
+  author = {Simeon Kostadinov},
+  year = {2017},
+  url = {https://towardsdatascience.com/how-the-current-best-question-answering-model-works-8bbacf375e2a},
+}
+
+
+</script>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

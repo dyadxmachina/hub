@@ -1,7 +1,7 @@
 ---
 title: "dyad x machina projects"
 description: |
-  [two](http://dyadxmachina.com) [deep learning researchers](https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow) focused on [mental](https://www.youtube.com/watch?v=9pr7j27G_TM) [health](https://www.youtube.com/watch?v=zqWrHaY6U9g) and [education](https://dyadxmachina.github.io/hub/deepedu.html).
+  [two](http://dyadxmachina.com) [deep learning researchers](https://github.com/dyadxmachina/Applied-Deep-Learning-with-TensorFlow) focused on [mental](https://www.youtube.com/watch?v=9pr7j27G_TM) [health](https://www.youtube.com/watch?v=zqWrHaY6U9g), [biotechnology](https://www.media.mit.edu/groups/affective-computing/overview/), and [education](https://dyadxmachina.github.io/hub/deepedu.html).
 site: radix::radix_website
 ---
 
