@@ -1424,16 +1424,16 @@ def gd(x, y, theta, alpha, m, iterations):
 
 input(X, y, 10000)</code></pre>
 <pre><code>
-Epoch 0 - Cost: 12134.493701
-Epoch 1000 - Cost: 14.971661
-Epoch 2000 - Cost: 3.082576
-Epoch 3000 - Cost: 1.657790
-Epoch 4000 - Cost: 1.210520
-Epoch 5000 - Cost: 1.015361
-Epoch 6000 - Cost: 0.921441
-Epoch 7000 - Cost: 0.872925
-Epoch 8000 - Cost: 0.845361
-Epoch 9000 - Cost: 0.830416</code></pre>
+Epoch 0 - Cost: 14975.095790
+Epoch 1000 - Cost: 10.810520
+Epoch 2000 - Cost: 2.548314
+Epoch 3000 - Cost: 1.522140
+Epoch 4000 - Cost: 1.130509
+Epoch 5000 - Cost: 0.963231
+Epoch 6000 - Cost: 0.877475
+Epoch 7000 - Cost: 0.836454
+Epoch 8000 - Cost: 0.812410
+Epoch 9000 - Cost: 0.798912</code></pre>
 </div>
 <p>NNLS converges optimally here.</p>
 <figure>
@@ -1465,7 +1465,7 @@ Epoch 9000 - Cost: 0.830416</code></pre>
 <h2 id="implementation-with-unique-constraints">Implementation with unique constraints</h2>
 <p>Here are the steps we’ll use for our problem 1. Do a gradient update (ignore any of the constraints) 2. Project unto the half of the result (back on the feasible set based on constraints) 3. Replace/Truncate entries down to zero</p>
 <p>Remember that our single constraint is to project on to the first 50% of components to derive the feasible set and ignore the other parameters.</p>
-<p><span class="math display">\[theta ≤ 0, i = [1, . . . ,\ m/2] \]</span></p>
+<p><span class="math display">\[theta &gt;= 0, i = [1, . . . ,\ m/2] \]</span></p>
 <p>So now we’ll move into Python to solve the issue and plot the results</p>
 <h1 id="results">Results</h1>
 <figure>
@@ -1530,25 +1530,25 @@ def gd(x, y, theta, alpha, m, iterations, project=False):
 
 input(X, y, 10000, True)</code></pre>
 <pre><code>
-Iteration 0.000000 | Cost: 1263663447.267889
+Iteration 0.000000 | Cost: 1250700514.525059
 Pcg of negatives 0.000000
-Iteration 1000.000000 | Cost: 16.519297
+Iteration 1000.000000 | Cost: 16.587968
 Pcg of negatives 0.000000
-Iteration 2000.000000 | Cost: 17.067952
+Iteration 2000.000000 | Cost: 16.708769
 Pcg of negatives 0.000000
-Iteration 3000.000000 | Cost: 17.177523
+Iteration 3000.000000 | Cost: 17.062254
 Pcg of negatives 0.000000
-Iteration 4000.000000 | Cost: 17.522350
+Iteration 4000.000000 | Cost: 17.651817
 Pcg of negatives 0.000000
-Iteration 5000.000000 | Cost: 17.830463
+Iteration 5000.000000 | Cost: 17.689826
 Pcg of negatives 0.000000
-Iteration 6000.000000 | Cost: 17.769360
+Iteration 6000.000000 | Cost: 17.672136
 Pcg of negatives 0.000000
-Iteration 7000.000000 | Cost: 17.924423
+Iteration 7000.000000 | Cost: 17.663930
 Pcg of negatives 0.000000
-Iteration 8000.000000 | Cost: 17.749764
+Iteration 8000.000000 | Cost: 17.666040
 Pcg of negatives 0.000000
-Iteration 9000.000000 | Cost: 17.691077
+Iteration 9000.000000 | Cost: 17.462005
 Pcg of negatives 0.000000</code></pre>
 </div>
 <figure>
