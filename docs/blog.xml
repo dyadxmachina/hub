@@ -12,14 +12,14 @@
       <link>https://dyadxmachina.github.io/hub/</link>
     </image>
     <generator>Radix</generator>
-    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Constrained Convex Optimization Problem</title>
+      <title>Constrained Least Squares Problem</title>
       <dc:creator>Fanli (Christian Ramsey) Zheng</dc:creator>
       <link>https://dyadxmachina.github.io/hub/posts</link>
-      <description>Subgradients and their constraints</description>
+      <description>Solving the 1/2 nonnegative equality constraint</description>
       <guid>https://dyadxmachina.github.io/hub/posts</guid>
-      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

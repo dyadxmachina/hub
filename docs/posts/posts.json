@@ -1,17 +1,17 @@
 [
   {
     "path": "posts/",
-    "title": "Constrained Convex Optimization Problem",
-    "description": "Subgradients and their constraints",
+    "title": "Constrained Least Squares Problem",
+    "description": "Solving the 1/2 nonnegative equality constraint",
     "author": [
       {
         "name": "Fanli (Christian Ramsey) Zheng",
         "url": "https://www.linkedin.com/in/christianramsey/"
       }
     ],
-    "date": "2018-11-25",
+    "date": "2018-11-29",
     "categories": [],
     "preview": {},
-    "last_modified": "2018-11-28T14:53:40-08:00"
+    "last_modified": "2018-11-29T00:14:45-08:00"
   }
 ]
