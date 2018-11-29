@@ -175,7 +175,7 @@ Here are the steps we'll use for our problem
 
 Remember that our single constraint is to project on to the first 50% of components to derive the feasible set and ignore the other parameters.
 
-$$theta ≤ 0, i = [1, . . . ,\ m/2] $$ 
+$$theta >= 0, i = [1, . . . ,\ m/2] $$ 
 
 So now we'll move into Python to solve the issue and plot the results
 
