@@ -1,0 +1,115 @@
+---
+title: 
+description: | 
+  
+author:
+
+output: 
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+
+0. Why do we need to be unique? (why do we exist)
+
+1. What are we humans (are we unique and why)? --> we are different because we are intelligent
+
+
+2. How and why we are intelligent? --> we can reason/think/learn and have consciousness/mind 
+
+
+3. What is intelligence? --> the ability to reason/think/learn 
+
+
+4. Can machines think (like us)? --> mechanize human's ability to reason/think/learn 
+
+
+The history of AI:
+Start from the initial attempt made by Aristotle uses syllogism and later logic to reason to tell right from wrong. They believe that reason and logic is the key to help us think and makes us intelligent. On the other hand, people consistently try to mechanize the thinking and reasoning process. By combining both, we develop better and better theories(in symbolic reasoning and neuroscience) and machines to mechanize this process until the point we start to believe it is possible to make a machine that thinks like human given the right guidance. The start of AI. There are other scientists who find out why we humans are different > because our ability to sense and some even believe that knowledge is in the world and we are just learning from there which leads us to explore the possibilities. We have robots with bodies. The current development of deep learning make machines an perception/pattern matching experts that can learn from the data. The next step, consciousness?
+
+
+
+Missing:
+- the next step is to approach AGI (artificial general intelligence). If computers beat humans in every perception task they won't have reached AGI if we define general intelligence as we do below  
+- who were the groups of people? were they mostly mathematicians by title? when did the neuroscientists come in?
+- You suggest that intelligence shifted from logic to perception but I think we should mount this into a shift that consider perception as a major component of intelligence. More than people could have imagined.
+
+
+The Neurobiological View of Intelligence
+As it turns out, the neuroscience around intelligent is neither precisely defined our well agreed upon. But what has been clear is that intelligence doesn't fit nicely into any of the categorical buckets 
+
+Intelligence is now, or always has been, multi-facetd and the grand theory of deep learning will eventually find it's place beneath the hype, not as intelligence but as a necessary component of it; just as logic and higher-order reasoning.
+
+
+If one may define general intelligence it is within these abilities
+- Pattern Recognition - The learning problem (mainly solved by deep learning)
+- Reasoning - model the world and relations between objects and concepts logically
+- Build adaptive mental models of the world
+- Small n learning (learning from a small number of observations )
+- Plan and apply knowledge flexibly 
+- Meaning of Knowledge
+- Knowledge is not neutral and 
+- Knowledgbe itself cannot drive learning
+- We need the system that can feel right/wrong to selectively make their decision based on the knowledge 
+- We need a ethical system that first has the moral codes embedded
+- Learning to Learn
+
+
+AGI will take on many shapes and new improvements in reasoning, perception, and learning will enable us to make machines that can truly make sense of the world, plan, and act flexibly.
+
+This book will be a learning journey for the readers and the authors alike. Understanding the foundations mathematics for deep learning and AI will help us get closet to building  the future of artificial general intellgience.
+
+
+
+**My Question after AGI vido**
+
+If the future of AI is to reverse engineer theintelligence and to make machine learn and become intelligent as a human does.
+
+Marvin Minsky stated that "The question is not whether intelligent machines can have any emotions, but whether machines can be intelligent without any emotions" 
+
+I am wondering how this can be achieved with the emotions/feelings?
+
+We human learns by feedback. The feedback signals are largely composed by our feelings. We rarely reason through our decision instead we feed through our actions and the interactions with the world.
+
+The best way to teach a human or even an animal is to set up a reward and punishment system that they can navigate through. When we feel the punishment when we feel the pain of the punishment we learn our lesson and the valuable learning is largely encoded as a feeling that we know to avoide in the future.
+
+The same mechanism for reward. When we anticipate the reward, the feeling of pleasure, we are motivated to do the things that is associated with that reward. 
+
+Over time, we became increasingly skilled at associating the events/objects with the rewards/punishments that we encountered in the past. We even set up our internal reward and punishment system based on the moral and civilization training throughout our life. 
+
+This is one of the primary reasons that we learn. It helps us to behave 'regular'normal'and communicate regularly with each other. Also, it is also the reason we make prediction of a strange object/things through our memory and the feeling encoded with that memory to avoid the bad feeling (through the experience or the observation of the associated punishment) and to pursue the reward with the required efforts (through the anticipated reward attached with the actions).
+
+
+How could an intelligent system survive without the feeling embedded with them.
+
+
+
+
+SOME OTHER QUESTIONS 
+
+-  what is knowledge? --> sense experience
+
+- 
+
+
+THEMES
+
+- Logical Positivism: a statement is meaningful only if it is either purely formal (mathematics and logic) or capable of empirical verification. Rejection of metaphysics on the grounds that it is unverificable. It implies that all scientific propositions can be expressed, usually by means of various 'reduction' or explications' of the terms of the science to the terms of another more fundamental one. 
+
+
+- Metaphysics: the nature of existence, being and the world. Foundation of philosophy (Aristotle calls 'first philosophy or just 'wisdom'), says it is the subject that deals with 'first causes' and the principles of things'.
+Aristotle originally split metaphysics into 3 main sections: 
+
++ Ontology: the study of being and existence, including the definition and classification of entities, physical or mental, the nature of their properties, and the nature of change.
+
++ Natural Theology: the study of God, including the nature of religion and the world, exisence of divine, questions about the screation, and the various other religious or spiritual issues.
+
++ Universal Science: the study of first principles of logic and reasoning, such as the law of noncontradiction. 
+
+In sum, it implies an idea about the world or the universe, which may seem reasonable but it is ultimately not empirically verificable, testable or provable.
+
+
+- Materialism: all things are composed of material and the only thing can be truly proven to exist is matter --> mind-body problem --> robot needs a body to learn from the world 
+
+
+- Phenomenology: study of experience and how we experience. 
