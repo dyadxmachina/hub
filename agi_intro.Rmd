@@ -1,0 +1,44 @@
+---
+title: AGI and 
+description: | 
+  
+author:
+
+output: 
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+# Introduction
+## Intro 
+
+Whether it's been science, philosophy, or artificial intelligence, huamnswe have always found ourselves at odds with our existences. Why do we exist? Many have tired to approach this question with varying degrees of illumination. It But there are still more questions than there are answers. Artificial intelligence has become a salient mirror just as the industrial revolution made us realise what type of work "humans" should be doing, and therefore illuminated what we valued as humans. F We moved away from the endlessness of the question of why are we here and immediately moved to what Bourdieu called Distinction. What makes us different?. Of all the sciences that have begin to answer the question, progress in the field of neurobiology, computer science, artificial intelligence, primatology, anthropology, and sociology have all played a role in thinning the line between us and other animals just as Netwonian physics have told us that we may not be alone, that we may not be the centre of the universe. Monkeys with tools, dolphins and casual sex, Elephans and their endless memory, and the bees way of social organising shortened our view of humans as distinct.ButAs Ernest Becker has said, we are half animal and half symbolic andso we find ourselves valuing what isseems more abstract and less grounded in the flesh. Descarte and Aristole came to similar conclusion sabout the question. What makes us hman is reason, our ability to detached ourselves from our feelings and reason. But how to reason properly? . We will In parallelle other scientists looked to Darwin and a more biological view of intelligence. As thestudies on the nervous system became more and more advanceds, we moved from psychological theory grounded in observational research to looking  at networks of neurons and how they react to certain stimulus. This lead to neuroscience which was slowly uncovering that our central nervous system, i tthe key to our most profound features. Our cognition, thinking, reasoning, perceiving, and learning and memory. This would eventually lead to the cognitive revolution where many scientists from differing fields came to study the brain  and mental activitiy happeningin ourselves and other animals. It is obvious now, that this would lead to a want to emulate the central nervous system and . Can we emulate the brain and would that then give us keys to intelligence? Could that give us have conciousness an? AI seemed is an approach to answer such questions. We still no very little about how we reason an, learn, and experience everyday life. We can see AI as two tracks, applied AI, and philosophical AI. The first deals with cerating industrial applications and the second AIis around understanding intelligence. AI is both a tool and a mirror. So the hype will always exist because we do not know what makes us human and what we can and cannot emulate. AI has a chance at being a tool we use to make the world better or worse, and it also gives us a mirror into our world and what it means to exist. 
+
+## Logic & Reasoning
+
+And so we begin with reasoning. It didn't take very long for humans to begin to propose answers to the question of what does it mean exist. Dating back to 300 BC, their were major figures across many the field of philosophy, sociology, economics, and mathematics have looked to reasoning as one of the key distinctions of humankind. 
+
+Our ability to take a set of propositions and to know their truth and false values. Only from this base of propositions can we begin to conclud eor make logical combinations to create valid knowledge.
+
+Aristotle, called humans "animal rationale", in his treatise, On the Soul,  who saw humans as distinguised by their rationality, proposed the syllogism; Which was one of the first formulations of logic around 300 B.C. found in the Organon. In 1275, Ramon Llull, a spanish Theologian wrote the Ars Magna (Art of Finding Truth), which provided a method based in logic to produce new knowledge. This would eventually be further by  Giordano Bruno and Gottfried Leibiniz in his dissertation titled 'ars combinatoria'. It provided the possibility of creating a logic of invention. Leibiniz's focus influenceds things we know today as automated theorem prover. 
+
+
+Many scientists tried to forward this idea of rationality and mechanise it.
+Leibiniz would go on to create the logical calculii and then improved the  which was a mechanical calculator.
+
+
+ Porphyry considered man to be animal + morality + and rationality.
+ Weber consid
+ 
+ Charles Babbage
+ Ada Lovelace
+ 
+ George Boole took the basics of logic and mechanised it into an algebra.
+ This algebra would be combined with Claude Shannon's work to bring in the information age. 
+ 
+ 
+ 
+ ## Reasoning Under Uncertainty
+ 
+ Although logic gave us a way to reason under specific conditions, those conditions didn't match the real world. As we wonder about the world we often don't have enough information to make absolutely correct decisions. This meant that logic was only useful when we had such situations. So in 1736, the Reverend Thomas Bayes tried to reason about God's existence discovered the basic axioms of probability in his article, "Solving a Problem in the Doctrine of Chances" which showed that you could take prior probabilities.
+ This would be extended by Laplace in his work in 1798 on Celestial Mechanics.
