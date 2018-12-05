@@ -76,8 +76,7 @@ $$ s = rounds\ for\ p2\ to\ win $$
  
  A generalization to countable infinite state spaces was given by Kolmogorov (1931). Markov chains are related to Brownian motion and the ergodic hypothesis, two topics in physics which were important in the early years of the twentieth century. But Markov appears to have pursued this out of a mathematical motivation, namely the extension of the law of large numbers to dependent events. Out of this approach grew a general stw a general statistical instrument, the so-called stochastic Markov process. 
  
-
-  R. A. Fisher strongly used to recommend,
+R. A. Fisher strongly used to recommend,
 analyze and make the Maximum-likelihood popular between 1912 and 1922, although it had
 been used earlier by Gauss, Laplace, Thiele, and F. Y. Edgeworth. Several years later the EM algorithm was explained and given its name in a paper 1977 by Arthur Dempster, Nan
 Laird, and Donald Rubin in the Journal of the Royal Statistical Society. They pointed out
