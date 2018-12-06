@@ -1340,8 +1340,20 @@
 <p>Porphyry considered man to be animal + morality + and rationality. Weber consid</p>
 <p>Charles Babbage Ada Lovelace</p>
 <p>George Boole took the basics of logic and mechanised it into an algebra. This algebra would be combined with Claude Shannon’s work to bring in the information age.</p>
-<p>## Reasoning Under Uncertainty</p>
-<p>Although logic gave us a way to reason under specific conditions, those conditions didn’t match the real world. As we wonder about the world we often don’t have enough information to make absolutely correct decisions. This meant that logic was only useful when we had such situations. So in 1736, the Reverend Thomas Bayes tried to reason about God’s existence discovered the basic axioms of probability in his article, “Solving a Problem in the Doctrine of Chances” which showed that you could take prior probabilities. This would be extended by Laplace in his work in 1798 on Celestial Mechanics.</p>
+<h2 id="reasoning-under-uncertainty">Reasoning Under Uncertainty</h2>
+<p>Although logic gave us a way to reason under specific conditions, those conditions didn’t match the typical type of problem a human comes into contact with in the real world. As we orient ourselves towards concrete and abstract goals we often have to settle with an incomplete picture, lacking the certainty of propositions that logic requires. So we needed a way to reason under uncertainty, this brought on the theory of probabilities.</p>
+<p>Probability dates back to 1550 by Cardan, but wouldn’t be of practical use until the correspondence of Ferment and Pascal in 1654. Pascal and Fermet were discussing the problem that Chevalier de Méré proposed to Pascal, titled the problem of points.</p>
+<p>The game went as follows:</p>
+<p>Suppose two players who have equal chance of wining each round. Their is a prize pot where they have both contributed 50% each. The game has a priori number of rounds and who every wins the most rounds takes the prize pot. But let us suppose that the game is interupptd before the end of the game. How does one divide the pot fairly?</p>
+<p>There were others how attempted to solve this problem but the current outcomes lead to edge cases that were unintuitive and were mostly based on the past games.</p>
+<p>Pascal and Ferment made a breakthrough by considering (from the interruption forward) the possible futures that might be possible if the players had continued until the end.</p>
+<p><span class="math display">\[ r = rounds\ for\ p1\ to\ win \]</span> <span class="math display">\[ s = rounds\ for\ p2\ to\ win \]</span> <span class="math display">\[ r + s - 1 \]</span></p>
+<p><span class="math display">\[ Number\ of\ possible\ outcomes\ 2^{r+s-1} \]</span> Odds vs. expectations Soon after Pascale improving on Ferment’s results, Christiaan Huygens, used Pascal’s result to create the first treatise of modern Probability based on expectation.s</p>
+<ul>
+<li>Classical probability</li>
+<li>Empirical probability</li>
+<li>Subjective probability</li>
+</ul>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1349,6 +1361,15 @@
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
