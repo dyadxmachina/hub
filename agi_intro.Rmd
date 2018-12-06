@@ -60,6 +60,37 @@ $$ s = rounds\ for\ p2\ to\ win $$
  Odds vs. expectations
  Soon after Pascale improving on Ferment's results, Christiaan Huygens, used Pascal's result to create the first treatise of modern Probability based on expectation.s
  
+> For example, the probability of throwing a 6 on a die twice is 1⁄6 x 1⁄6 = 1⁄36 ("and" works like multiplication); the probability of throwing either a 3 or a 6 is 1⁄6 + 1⁄6 = 1⁄3 ("or" works like addition).
+ 
+ They also figured out the problem 
+ 
+ This formalisation would lead to the foundation of modern probability. 
+ 
+ Pascal would go on to use probability in his most notable work, Pensees, where he made a convincing argument of why one should believe in God. 
+ 
+ Nearly a centruy later, following the work of Fermet and Pascal, Abraham de Abraham de Moivre gave the first statement of the formula for the normal distribution which would be 
+ 
+ Laplace would be even more practical than Fermet and Pascal in his book, Théorie Analytique des Probabilités, where he elucidates the use of probablity theory to scientific and practical problems in statistical mechanics, actuarial mathematics, error, and so on.
+ 
+ Probability became a general workhorse. Andrey Andreyevich Markov introduced the Markov chains in 1906 when he produced the first theoretical results for stochastic processes by using the term “chain” for the first time. In 1913 he calculated letter sequences of the Russian language. 
+ 
+ A generalization to countable infinite state spaces was given by Kolmogorov (1931). Markov chains are related to Brownian motion and the ergodic hypothesis, two topics in physics which were important in the early years of the twentieth century. But Markov appears to have pursued this out of a mathematical motivation, namely the extension of the law of large numbers to dependent events. Out of this approach grew a general stw a general statistical instrument, the so-called stochastic Markov process. 
+ 
+  R. A. Fisher strongly used to recommend,
+analyze and make the Maximum-likelihood popular between 1912 and 1922, although it had
+been used earlier by Gauss, Laplace, Thiele, and F. Y. Edgeworth. Several years later the EM algorithm was explained and given its name in a paper 1977 by Arthur Dempster, Nan
+Laird, and Donald Rubin in the Journal of the Royal Statistical Society. They pointed out
+that the method had been "proposed many times in special circumstances" by other authors,
+but the 1977 paper generalized the method and developed the theory behind it. An
+expectation-maximization (EM) algorithm is used in statistics for finding maximum
+likelihood estimates of parameters in probabilistic models, where the model depends on
+unobserved latent variables. EM alternates between performing an expectation (E) step,
+which computes an expectation of the likelihood by including the latent variables as if they 
+ 
+ # Computer Sciences
+ 
+ 
+ 
  
  - Classical probability
  - Empirical probability
