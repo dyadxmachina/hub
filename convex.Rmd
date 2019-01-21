@@ -38,7 +38,8 @@ Our typical case is the least squares case  which can be detonated as
 $${\displaystyle \operatorname {arg\,min} \limits _{\mathbf {x} }\|\mathbf {Ax} -\mathbf {y} \|_{2}}$$
 
 in the linear case. This is straightforward but what we'd like to do here is add a constraint that ensures that half of the parameters are nonnegative.
- $$subject\ to\ x ≥ 0$$
+
+$$subject\ to\ x ≥ 0$$
 (Where x is half of the parameters) 
 We want to find the feasible set that fits our constraint. 
 
