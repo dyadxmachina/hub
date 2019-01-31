@@ -9,7 +9,10 @@ site: radix::radix_website
 
 Deep Learning Researchers using machine learning in the fields of mental health, education, and design. 
 
-[NLP, Physiology, Vision]
+
+We are currently both working with [Huberman Lab](http://www.hubermanlab.com/) (Stanford Department of Neurobiology) to understand anxiety and fear using deep learning techniques and designing methods at [IDEO](http://ideo.com) to augment the design thinking process by combining cognitive science, design research, with pattern recognition and machine learning techniques. 
+
+[NLP, Physiology, Neuro, Vision, Phenotyping, Affective Computing, CogSci, x Human Behaviour]
 
 > I don't know why we are here, but I'm pretty sure that it is not in order to enjoy ourselves. - Wittgenstein
 
