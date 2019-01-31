@@ -1,0 +1,38 @@
+---
+title: Working Principles
+description: | 
+  working design principles towards approach computational human understanding
+date: Feb 15, 2019
+author:
+  - name: Fanli (Christian) Zheng
+    url: https://www.linkedin.com/in/christianramsey/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com    
+    email: thechristianramsey@gmail.com
+  - name: Haohan Wang
+    url: https://www.linkedin.com/in/haohanw/
+    affiliation: dyad x machina
+    affiliation_url: https://dyadxmachina.com
+    email: haohan723@gmail.com    
+
+abstract: | 
+output: 
+  radix::radix_article:
+    toc: true
+    toc_depth: 3
+citation_url: https://m4dl.com
+---
+
+
+# From objects to human constructs
+
+> from classifying the number of people in a photo or the types of animal to seeing the amount of "gratitude" or frustration levels shown in a video)
+
+# From rational to full human being
+
+> from looking at humans through utlity theory, basic demography to taking in the full complexity of the individual and their context (cognitive, affective, behaviour, enviornment, situation). 
+
+# From modern hedonistic inspired design towards human flourishing and self-mastery
+
+> I don't know why we are here, but I'm pretty sure that it is not in order to enjoy ourselves. - Wittgenstein
+

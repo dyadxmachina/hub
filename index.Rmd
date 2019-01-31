@@ -14,6 +14,18 @@ We are currently both working with [Huberman Lab](http://www.hubermanlab.com/) (
 
 [NLP, Physiology, Neuro, Vision, Phenotyping, Affective Computing, CogSci, x Human Behaviour]
 
+Themes:
+
+- **From objects to human constructs**
+
+> from classifying the number of people in a photo or the types of animal to seeing the amount of "gratitude" or frustration levels shown in a video)
+
+- **From rational humans to the full human being**
+
+> from looking at humans through utlity theory, basic demography to taking in the full complexity of the individual and their context (cognitive, affective, behaviour, enviornment, situation). 
+
+- **From hedonic inspired design and society towards human flourishing and full self-mastery**
+
 > I don't know why we are here, but I'm pretty sure that it is not in order to enjoy ourselves. - Wittgenstein
 
 ## 2018 Work (Finished and In Progress)

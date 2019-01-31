@@ -1,17 +1,23 @@
 [
   {
     "path": "posts/",
-    "title": "Constrained Least Squares Problem",
-    "description": "Solving the 1/2 nonnegative equality constraint",
+    "title": "DeepEdu - Learning and Representation",
+    "description": "using deep learning to rethink knowledge acquisition and representation for modern learners",
     "author": [
       {
-        "name": "Fanli (Christian Ramsey) Zheng",
+        "name": "Fanli (Christian) Zheng",
         "url": "https://www.linkedin.com/in/christianramsey/"
+      },
+      {
+        "name": "Haohan Wang",
+        "url": "https://www.linkedin.com/in/haohanw/"
       }
     ],
-    "date": "2018-11-29",
+    "date": "2018-11-26",
     "categories": [],
-    "preview": {},
-    "last_modified": "2018-11-29T00:14:45-08:00"
+    "preview": "posts/radix-preview.png",
+    "last_modified": "2018-11-23T16:27:51-08:00",
+    "preview_width": 1248,
+    "preview_height": 576
   }
 ]
